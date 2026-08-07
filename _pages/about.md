@@ -25,6 +25,14 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
+<p style="text-align: justify;">
 Hello, and welcome to my website! I'm delighted to have you here. My name is Bivek Pradhan, and I am an Assistant Professor of Physics at Sikkim Government Science College, Chakung, as well as a PhD Scholar at the Sikkim Manipal Institute of Technology. My research focuses on understanding the dynamic processes of the Sun through the study of magnetohydrodynamics (MHD), Alfvén waves, compressible plasma turbulence, and the enduring challenge of coronal heating. I enjoy combining analytical theory, numerical simulations, and computational techniques to explore these fascinating phenomena.
+</p>
 
-Beyond research, I am passionate about teaching, mentoring students, and making physics engaging and accessible. I also believe that every student deserves the right guidance to discover meaningful academic and career opportunities. Through this website, I hope to share not only my research, teaching resources, and projects but also insights that can help students navigate their academic journey and make informed career choices in physics and related fields. Whether you're a student, fellow researcher, educator, or simply curious about physics, I hope you find something here that sparks your curiosity and supports your aspirations. Feel free to explore, and if you'd like to discuss research, exchange ideas, seek academic guidance, or collaborate, I'd be delighted to connect with you.
+<p style="text-align: justify;">
+Beyond research, I am passionate about teaching, mentoring students, and making physics engaging and accessible. I also believe that every student deserves the right guidance to discover meaningful academic and career opportunities. Through this website, I hope to share not only my research, teaching resources, and projects but also insights that can help students navigate their academic journey and make informed career choices in physics and related fields.
+</p>
+
+<p style="text-align: justify;">
+Whether you're a student, fellow researcher, educator, or simply curious about physics, I hope you find something here that sparks your curiosity and supports your aspirations. Feel free to explore, and if you'd like to discuss research, exchange ideas, seek academic guidance, or collaborate, I'd be delighted to connect with you.
+</p>
