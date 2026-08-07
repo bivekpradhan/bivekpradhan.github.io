@@ -8,7 +8,8 @@ email: bivekpradhan66@gmail.com # your email address
 scholar_userid: wF6BMUoAAAAJ&hl # your Google Scholar ID
 # wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 # whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-#custom_social: # can be any name here other than the ones already defined in the jekyll-socials plugin
-  #logo: https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png # can be png, svg, jpg
-  #title: Custom Social
-  #url: https://www.alberteinstein.com/
+custom_social: ResearchGate # can be any name here other than the ones already defined in the jekyll-socials plugin
+logo: https://upload.wikimedia.org/wikipedia/commons/e/e0/ResearchGate_icon_SVG.svg 
+title: ResearchGate 
+url: https://www.researchgate.net/profile/Bivek-Pradhan-3?ev=hdr_xprf 
+
