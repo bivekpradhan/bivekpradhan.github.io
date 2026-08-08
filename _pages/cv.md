@@ -11,4 +11,19 @@ toc:
   sidebar: left
 ---
 
+<style>
+.date-column {
+  width: 90px !important;
+  transform: none !important;
+}
+
+.date-column .location {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+</style>
+
 
