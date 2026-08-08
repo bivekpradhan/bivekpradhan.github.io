@@ -6,7 +6,7 @@ cv:
   image: ""
   summary:I am an Assistant Professor of Physics and PhD scholar exploring solar physics, MHD waves, and plasma turbulence, with a passion for teaching, research, and guiding students in their academic journey.
 
-  #social_networks:
+  social_networks:
     - network: X
       username: AlbertEinstein
     - network: GitHub
