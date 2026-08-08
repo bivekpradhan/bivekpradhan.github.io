@@ -71,7 +71,7 @@ cv:
 
       - company: Institute for Plasma Research (IPR)
         position: Summer Research Intern (SSP-2019)
-        location: Bhat, Gandhinagar, Gujarat, India
+        location: Gandhinagar, Gujarat, India
         start_date: 2019-05-27
         end_date: 2019-07-05
         summary: Conducted a research project titled "Electromagnetic effect on temperature gradient driven unstable waves" under the Summer Students Program (SSP-2019).
@@ -80,16 +80,7 @@ cv:
           - Studied electromagnetic effects on temperature gradient driven instabilities
           - Completed project as part of a national-level research internship program
 
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+   
 
     Publications:
       - title: Zur Elektrodynamik bewegter Körper
@@ -149,16 +140,12 @@ cv:
           - Student mentoring and guidance
 
     Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
+      - English, Hindi, Nepali
 
     Interests:
       - name: Physics
         icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+        keywords: "Solar Plasma, MHD turbulence, Solar Coronal Heating"
 
     Certificates:
       - name: Machine Learning
