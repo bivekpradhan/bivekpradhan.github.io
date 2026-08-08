@@ -57,43 +57,28 @@ cv:
       highlights: []
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
-        highlights:
-          - Relativity
-          - Description 2.
+  - company: Sikkim Government Science College
+    position: Assistant Professor of Physics
+    location: Chakung, Sikkim, India
+    start_date: 2021-09-08
+    end_date: ""
+    summary: Teaching undergraduate physics courses, mentoring students, and contributing to academic and institutional development.
+    highlights:
+      - Deliver undergraduate courses in Physics
+      - Mentor and guide students in academic and research activities
+      - Participate in departmental and institutional committees
+      - Engage in Faculty Development Programs (FDPs) for continuous growth
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
-        highlights:
-          - Description 1.
-          - Description 2.
-
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
+  - company: Institute for Plasma Research (IPR)
+    position: Summer Research Intern (SSP-2019)
+    location: Bhat, Gandhinagar, Gujarat, India
+    start_date: 2019-05-27
+    end_date: 2019-07-05
+    summary: Conducted a research project titled "Electromagnetic effect on temperature gradient driven unstable waves" under the Summer Students Program (SSP-2019).
+    highlights:
+      - Performed independent research work in plasma physics
+      - Studied electromagnetic effects on temperature gradient driven instabilities
+      - Completed project as part of a national-level research internship program
     Volunteer:
       - company: People's Climate March
         position: Lead Organizer
@@ -105,21 +90,7 @@ cv:
           - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
           - "Men of the year 2014 by Time magazine"
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+   
 
     Publications:
       - title: Zur Elektrodynamik bewegter Körper
@@ -147,10 +118,36 @@ cv:
         summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+  - name: Physics
+    level: Advanced
+    icon: fa-solid fa-hashtag
+    keywords:
+      - Strong expertise in Physics
+
+  - name: Programming & Computational Tools
+    level: Intermediate
+    icon: fa-solid fa-code
+    keywords:
+      - C
+      - Python
+      - MATLAB
+      - Mathematica
+
+  - name: Software & Documentation
+    level: Advanced
+    icon: fa-solid fa-laptop
+    keywords:
+      - MS Word
+      - MS PowerPoint
+      - LaTeX
+
+  - name: Professional Skills
+    level: Advanced
+    icon: fa-solid fa-user
+    keywords:
+      - Communication skills
+      - Interpersonal skills
+      - Student mentoring and guidance
 
     Languages:
       - name: German
@@ -180,20 +177,4 @@ cv:
         issuer: Stanford University
         icon: fa-solid fa-envelope
 
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+   
