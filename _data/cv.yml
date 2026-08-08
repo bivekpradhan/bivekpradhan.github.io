@@ -140,7 +140,12 @@ cv:
           - Student mentoring and guidance
 
     Languages:
-      - English, Hindi, Nepali
+      - name: English
+        summary: Fluent
+      - name: Hindi
+        summary: Fluent
+      - name: Nepali
+        summary: Native speaker
 
     Interests:
       - name: Physics
