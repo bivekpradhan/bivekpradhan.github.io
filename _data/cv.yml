@@ -1,12 +1,12 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Bivek Pradhan
+  label: Assistant Professor of Physics| PhD Scholar
+  email: bivekpradhan66@gmail.com
+  location: Sikkim Government Science College, Chakung
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary:I am an Assistant Professor of Physics and PhD scholar exploring solar physics, MHD waves, and plasma turbulence, with a passion for teaching, research, and guiding students in their academic journey.
 
-  social_networks:
+  #social_networks:
     - network: X
       username: AlbertEinstein
     - network: GitHub
