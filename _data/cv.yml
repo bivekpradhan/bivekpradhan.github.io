@@ -14,37 +14,47 @@ cv:
     - network: LinkedIn
       username: example
 
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+  address: Sikkim Government Science College
+    street: 
+    city: Soreng
+    region: West Sikkim
+    postalCode: 737121
+    countryCode: IN
 
-  sections:
-    Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
-        highlights:
-          - Description 1.
-          - Description 2.
+ sections:
+  Education:
+    - institution: Sikkim Manipal Institute of Technology
+      location: Majhitar, Sikkim, India
+      url: ""
+      area: Physics
+      studyType: Ph.D. (Pursuing)
+      start_date: 2021
+      end_date: ""
+      score: ""
+      courses: ""
+      highlights: []
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
-        highlights:
-          - Description 1.
-          - Description 2.
+    - institution: Sikkim Manipal Institute of Technology
+      location: Majhitar, Sikkim, India
+      url: ""
+      area: Physics
+      studyType: M.Sc.
+      start_date: 2018
+      end_date: 2020
+      score: ""
+      courses: ""
+      highlights: []
+
+    - institution: Sikkim Government College, Tadong
+      location: Sikkim, India
+      url: ""
+      area: Physics
+      studyType: B.Sc.
+      start_date: 2015
+      end_date: 2018
+      score: ""
+      courses: ""
+      highlights: []
 
     Experience:
       - company: Institute for Advanced Study, Princeton University
