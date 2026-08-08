@@ -1,0 +1,21 @@
+/* Left-align year badge and location in CV Experience (and similar sections) */
+.date-column {
+  text-align: left !important;          /* or text-start */
+}
+
+.date-column .table-cv {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.date-column p.location {
+  text-align: left;
+  white-space: normal;                  /* optional: allow wrapping if locations are long */
+}
+
+/* Optional: make the badge itself left-aligned and remove excess centering */
+.date-column .badge {
+  display: inline-block;
+  text-align: left;
+  min-width: auto;                      /* or keep min-width if you prefer */
+}
