@@ -10,3 +10,12 @@ cv_format: rendercv # options: rendercv, jsonresume
 toc:
   sidebar: left
 ---
+
+<style>
+.table-cv {
+  text-align: center;
+}
+.table-cv .location {
+  justify-content: center;
+}
+</style>
