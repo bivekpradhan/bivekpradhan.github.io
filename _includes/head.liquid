@@ -1,0 +1,8 @@
+{% comment %}
+  Local override of the head include.
+  We keep the original head content and just append our custom CSS.
+{% endcomment %}
+
+{% include head.liquid %}   {# this line may need adjustment – see note below #}
+
+<link rel="stylesheet" href="{{ '/assets/custom/custom.css' | relative_url }}">
