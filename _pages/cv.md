@@ -13,9 +13,9 @@ toc:
 
 <style>
 .table-cv {
-  text-align: center;
+  text-align: left;
 }
 .table-cv .location {
-  justify-content: center;
+  justify-content: left;
 }
 </style>
