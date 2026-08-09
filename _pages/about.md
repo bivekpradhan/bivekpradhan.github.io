@@ -25,12 +25,16 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-<div class="card mt-3 p-3">
-  <p>Hello, and welcome to my website! I'm delighted to have you here. My name is Bivek Pradhan, and I am an Assistant Professor of Physics with 5+ years of teaching experience, as well as a researcher. My research focuses on understanding the dynamic processes of the Sun through the study of magnetohydrodynamics (MHD), Alfvén waves, compressible plasma turbulence, and the enduring challenge of coronal heating. I enjoy combining analytical theory, numerical simulations, and computational techniques to explore these fascinating phenomena.</p>
+<p style="text-align: justify;">
+Hello, and welcome to my website! I'm delighted to have you here. My name is Bivek Pradhan, and I am an Assistant Professor of Physics with 5+ years of teaching experience, as well as a researcher. My research focuses on understanding the dynamic processes of the Sun through the study of magnetohydrodynamics (MHD), Alfvén waves, compressible plasma turbulence, and the enduring challenge of coronal heating. I enjoy combining analytical theory, numerical simulations, and computational techniques to explore these fascinating phenomena.</p>
   
-  <p>Beyond research, I am passionate about teaching, mentoring students, and making physics engaging and accessible. I also believe that every student deserves the right guidance to discover meaningful academic and career opportunities. Through this website, I hope to share not only my research, teaching resources, and projects but also insights that can help students navigate their academic journey and make informed career choices in physics and related fields.</p>
-</div>
+<p style="text-align: justify;">
+Beyond research, I am passionate about teaching, mentoring students, and making physics engaging and accessible. I also believe that every student deserves the right guidance to discover meaningful academic and career opportunities. Through this website, I hope to share not only my research, teaching resources, and projects but also insights that can help students navigate their academic journey and make informed career choices in physics and related fields.
+</p>
 
+
+<div class="card mt-3 p-3">
 <p style="text-align: justify;">
 Whether you're a student, fellow researcher, educator, or simply curious about physics, I hope you find something here that sparks your curiosity and supports your aspirations. Feel free to explore, and if you'd like to discuss research, exchange ideas, seek academic guidance, or collaborate, I'd be delighted to connect with you.
 </p>
+</div>
