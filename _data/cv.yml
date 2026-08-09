@@ -102,6 +102,16 @@ cv:
         url: https://doi.org/10.1007/s11207-025-02583-0
         summary: A review of turbulent energy dissipation mechanisms in MHD systems relevant to coronal heating, synthesizing classical turbulence theories and evaluating physics-informed neural networks as an emerging modeling approach.
 
+     - title: Alfvén Wave Mode Coupling as a Source of Compressible Acoustic Waves in the Solar Corona
+        authors:
+          - Bivek Pradhan
+          - Gobinda Chandra Mishra
+          - Utpal Deka
+        publisher: CRC Press (Applied Research in Engineering Sciences)
+        releaseDate: 2025-01-01
+        url: ""
+        summary: Investigates the generation of compressible acoustic waves through Alfvén wave mode coupling in the solar corona.
+ 
       - title: Parametric Decay Instability as a Source of Turbulence in an Open Leakage Permitting Vertical Solar Coronal Domain
         authors:
           - Bivek Pradhan
@@ -121,16 +131,7 @@ cv:
         url: ""
         summary: A numerical investigation of wave propagation and energy transport driven by compressible acoustic and torsional Alfvén waves in an idealized 1-D cylindrical solar flux tube.
 
-      - title: Alfvén Wave Mode Coupling as a Source of Compressible Acoustic Waves in the Solar Corona
-        authors:
-          - Bivek Pradhan
-          - Gobinda Chandra Mishra
-          - Utpal Deka
-        publisher: CRC Press (Applied Research in Engineering Sciences)
-        releaseDate: 2025-01-01
-        url: ""
-        summary: Investigates the generation of compressible acoustic waves through Alfvén wave mode coupling in the solar corona.
-
+      
     Skills:
       - name: Physics
         level: Advanced
@@ -173,15 +174,15 @@ cv:
         summary: Native speaker
 
     Interests:
-      - name: Solar & Plasma Physics
+      - name: Physics
         icon: fa-solid fa-sun
-        keywords: "Coronal Heating, Alfvén Waves, MHD Turbulence, Wave Coupling"
-      - name: Computational & Data-Driven Methods
+        keywords: "Coronal Heating, MHD Turbulence, Physics Informed Neural Network, Non-linear Dynamics"
+      - name: Computational Physics
         icon: fa-solid fa-computer
-        keywords: "PLUTO Code, Numerical Simulations, Physics-Informed Neural Networks, Spectral Analysis"
-      - name: Physics Education & Curriculum Development
+        keywords: "Learning AI and its potential "
+      - name: Physics Outreach & Mentorship
         icon: fa-solid fa-chalkboard-user
-        keywords: "Undergraduate Pedagogy, NEP 2020, Curriculum Design"
+        keywords: "Making Physics Accessible, Undergraduate Research Guidance, Career Guidance/ Couselling"
 
     # Certificates:
     #   - name: Machine Learning
