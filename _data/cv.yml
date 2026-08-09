@@ -82,30 +82,56 @@ cv:
 
    
 
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+   Publications:
+      - title: A Linear Analysis of Torsional Alfvén Waves in Open Twisted Divergent Magnetic Flux Tubes for Coronal Heating
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time.
+          - Bivek Pradhan
+          - Gobinda Chandra Mishra
+          - Pralay Kumar Karmakar
+          - Utpal Deka
+        publisher: Solar Physics
+        releaseDate: 2024-01-01
+        url: https://doi.org/10.1007/s11207-024-02372-1
+        summary: A linear analysis of torsional Alfvén wave behavior and energy transfer in an open, twisted, divergent magnetic flux tube, showing that intermediate wave frequencies most efficiently transmit energy to heat the solar corona.
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+      - title: A Critical Review on Turbulent Energy Dissipation Mechanism in Solar Corona to Astrophysical Systems and a Physics-Informed Neural Network Approach
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect.
+          - Bivek Pradhan
+          - Utpal Deka
+          - Gobinda Chandra Mishra
+        publisher: Solar Physics
+        releaseDate: 2025-01-01
+        url: https://doi.org/10.1007/s11207-025-02583-0
+        summary: A review of turbulent energy dissipation mechanisms in MHD systems relevant to coronal heating, synthesizing classical turbulence theories and evaluating physics-informed neural networks as an emerging modeling approach.
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
+      - title: Parametric Decay Instability as a Source of Turbulence in an Open Leakage Permitting Vertical Solar Coronal Domain
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous.
+          - Bivek Pradhan
+          - Utpal Deka
+        publisher: Solar Physics
+        releaseDate: 2026-01-01
+        url: https://doi.org/10.1007/s11207-026-02662-w
+        summary: A study of parametric decay instability as a turbulence-generating mechanism in an open, leakage-permitting vertical solar coronal domain.
+
+      - title: The Dynamics of Compressible Acoustic Waves and Torsional Alfvén Waves in Perspective of Solar Coronal Heating
+        authors:
+          - Bivek Pradhan
+          - Utpal Deka
+          - Gobinda Chandra Mishra
+        publisher: Journal of the Korean Astronomical Society
+        releaseDate: 2026-01-01
+        url: ""
+        summary: A numerical investigation of wave propagation and energy transport driven by compressible acoustic and torsional Alfvén waves in an idealized 1-D cylindrical solar flux tube.
+
+      - title: Alfvén Wave Mode Coupling as a Source of Compressible Acoustic Waves in the Solar Corona
+        authors:
+          - Bivek Pradhan
+          - Gobinda Chandra Mishra
+          - Utpal Deka
+        publisher: CRC Press (Applied Research in Engineering Sciences)
+        releaseDate: 2025-01-01
+        url: ""
+        summary: Investigates the generation of compressible acoustic waves through Alfvén wave mode coupling in the solar corona.
 
     Skills:
       - name: Physics
@@ -122,6 +148,7 @@ cv:
           - Python
           - MATLAB
           - Mathematica
+          - PLUTO, MHD Code
 
       - name: Software & Documentation
         level: Advanced
