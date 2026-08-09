@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: / 
-subtitle: Researcher | Assistant Professor & NEP Coordinator, Dept. of Physics, SGSC Chakung
+subtitle: | Assistant Professor of Physics | PhD Scholar | Career Mentor
 
 profile:
   align: right
@@ -26,7 +26,7 @@ latest_posts:
 ---
 
 <p style="text-align: justify;">
-Hello, and welcome to my website! I'm delighted to have you here. My name is Bivek Pradhan, and I am an Assistant Professor of Physics at Sikkim Government Science College, Chakung, as well as a PhD Scholar at the Sikkim Manipal Institute of Technology. My research focuses on understanding the dynamic processes of the Sun through the study of magnetohydrodynamics (MHD), Alfvén waves, compressible plasma turbulence, and the enduring challenge of coronal heating. I enjoy combining analytical theory, numerical simulations, and computational techniques to explore these fascinating phenomena.
+Hello, and welcome to my website! I'm delighted to have you here. My name is Bivek Pradhan, and I am an Assistant Professor of Physics with 5+ year of teaching experience, as well as a researcher. My research focuses on understanding the dynamic processes of the Sun through the study of magnetohydrodynamics (MHD), Alfvén waves, compressible plasma turbulence, and the enduring challenge of coronal heating. I enjoy combining analytical theory, numerical simulations, and computational techniques to explore these fascinating phenomena.
 </p>
 
 <p style="text-align: justify;">
