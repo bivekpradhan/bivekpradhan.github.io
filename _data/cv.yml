@@ -34,7 +34,7 @@ cv:
         courses: ""
         highlights: []
 
-      - institution: Sikkim Manipal Institute of Technology
+      - institution: Sikkim Manipal Institute of Technology, Sikkim University
         location: Majhitar, Sikkim, India
         url: ""
         area: Physics
@@ -45,10 +45,10 @@ cv:
         courses: ""
         highlights: []
 
-      - institution: Sikkim Government College, Tadong
+      - area: Physics
+        institution: Sikkim Government College, Tadong, Sikkim University
         location: Sikkim, India
         url: ""
-        area: Physics
         studyType: B.Sc.
         start_date: 2015
         end_date: 2018
