@@ -33,8 +33,8 @@ Beyond research, I am passionate about teaching, mentoring students, and making 
 </p>
 
 
-<div class="card mt-3 p-3">
-<p style="text-align: justify;">
+<div class="card mt-3 mb-3 p-2">
+<p style="text-align: justify; color: #1a3c6e;">
 Whether you're a student, fellow researcher, educator, or simply curious about physics, I hope you find something here that sparks your curiosity and supports your aspirations. Feel free to explore, and if you'd like to discuss research, exchange ideas, seek academic guidance, or collaborate, I'd be delighted to connect with you.
 </p>
 </div>
