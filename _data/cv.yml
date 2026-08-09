@@ -23,10 +23,10 @@ cv:
 
   sections:
     Education:
-      - institution: Sikkim Manipal Institute of Technology
+      - institution: Sikkim Manipal Institute of Technology, Sikkim Manipal University
         location: Majhitar, Sikkim, India
         url: ""
-        area: Physics
+        area: MHD turbulence, Solar Coronal Heating
         studyType: Ph.D. (Pursuing)
         start_date: 2021
         end_date: ""
@@ -34,22 +34,22 @@ cv:
         courses: ""
         highlights: []
 
-      - institution: Sikkim Manipal Institute of Technology, Sikkim University
+      - institution: Sikkim Manipal Institute of Technology, Sikkim Manipal University
         location: Majhitar, Sikkim, India
         url: ""
-        area: Physics
-        studyType: M.Sc.
+        area: "Specialization: Plasma and High Energy Physics"
+        studyType: M.Sc. Physics
         start_date: 2018
         end_date: 2020
         score: ""
         courses: ""
         highlights: []
 
-      - area: Physics
+      - area: ""
         institution: Sikkim Government College, Tadong, Sikkim University
         location: Sikkim, India
         url: ""
-        studyType: B.Sc.
+        studyType: B.Sc. Physics
         start_date: 2015
         end_date: 2018
         score: ""
@@ -59,7 +59,7 @@ cv:
     Experience:
       - company: Sikkim Government Science College
         position: Assistant Professor of Physics
-        location: Chakung, Sikkim, India
+        location: Chakung,<br> Sikkim, India
         start_date: 2021-09-08
         end_date: ""
         summary: Teaching undergraduate physics courses, mentoring students, and contributing to academic and institutional development.
