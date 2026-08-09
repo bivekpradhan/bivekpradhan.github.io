@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: / 
-subtitle: | Assistant Professor of Physics | PhD Scholar | Career Mentor
+subtitle: Assistant Professor of Physics | PhD Scholar | Career Mentor
 
 profile:
   align: right
