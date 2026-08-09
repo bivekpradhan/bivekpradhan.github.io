@@ -102,7 +102,7 @@ cv:
         url: https://doi.org/10.1007/s11207-025-02583-0
         summary: A review of turbulent energy dissipation mechanisms in MHD systems relevant to coronal heating, synthesizing classical turbulence theories and evaluating physics-informed neural networks as an emerging modeling approach.
 
-     - title: Alfvén Wave Mode Coupling as a Source of Compressible Acoustic Waves in the Solar Corona
+      - title: Alfvén Wave Mode Coupling as a Source of Compressible Acoustic Waves in the Solar Corona
         authors:
           - Bivek Pradhan
           - Gobinda Chandra Mishra
