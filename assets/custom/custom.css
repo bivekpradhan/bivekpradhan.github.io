@@ -1,0 +1,13 @@
+/* Left-align year and location in Experience section */
+.date-column {
+  text-align: left !important;
+}
+
+.date-column .badge {
+  text-align: left !important;
+  display: inline-block;
+}
+
+.date-column p.location {
+  text-align: left !important;
+}
