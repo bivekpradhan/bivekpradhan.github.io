@@ -80,9 +80,7 @@ cv:
           - Studied electromagnetic effects on temperature gradient driven instabilities
           - Completed project as part of a national-level research internship program
 
-   
-
-   Publications:
+    Publications:
       - title: A Linear Analysis of Torsional Alfvén Waves in Open Twisted Divergent Magnetic Flux Tubes for Coronal Heating
         authors:
           - Bivek Pradhan
@@ -175,22 +173,28 @@ cv:
         summary: Native speaker
 
     Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Solar Plasma, MHD turbulence, Solar Coronal Heating"
+      - name: Solar & Plasma Physics
+        icon: fa-solid fa-sun
+        keywords: "Coronal Heating, Alfvén Waves, MHD Turbulence, Wave Coupling"
+      - name: Computational & Data-Driven Methods
+        icon: fa-solid fa-computer
+        keywords: "PLUTO Code, Numerical Simulations, Physics-Informed Neural Networks, Spectral Analysis"
+      - name: Physics Education & Curriculum Development
+        icon: fa-solid fa-chalkboard-user
+        keywords: "Undergraduate Pedagogy, NEP 2020, Curriculum Design"
 
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
+    # Certificates:
+    #   - name: Machine Learning
+    #     date: 2018-01-01
+    #     issuer: Stanford University
+    #     icon: fa-solid fa-location-dot
 
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
+    #   - name: Quantum Computing
+    #     date: 2018-01-01
+    #     issuer: Stanford University
+    #     icon: fa-solid fa-tag
 
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+    #   - name: Quantum Information
+    #     date: 2018-01-01
+    #     issuer: Stanford University
+    #     icon: fa-solid fa-envelope
