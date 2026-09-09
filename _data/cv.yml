@@ -1,201 +1,201 @@
-cv:
-  name: Bivek Pradhan
-  label: Assistant Professor of Physics | PhD Scholar
-  email: bivekpradhan66@gmail.com
-  location: Sikkim Government Science College, Chakung
-  image: ""
-  summary: I am an Assistant Professor of Physics and PhD scholar exploring solar physics, MHD waves, and plasma turbulence, with a passion for teaching, research, and guiding students in their academic journey.
+# cv:
+#   name: Bivek Pradhan
+#   label: Assistant Professor of Physics | PhD Scholar
+#   email: bivekpradhan66@gmail.com
+#   location: Sikkim Government Science College, Chakung
+#   image: ""
+#   summary: I am an Assistant Professor of Physics and PhD scholar exploring solar physics, MHD waves, and plasma turbulence, with a passion for teaching, research, and guiding students in their academic journey.
 
-  social_networks:
-    - network: X
-      username: AlbertEinstein
-    - network: GitHub
-      username: example
-    - network: LinkedIn
-      username: example
+#   social_networks:
+#     - network: X
+#       username: AlbertEinstein
+#     - network: GitHub
+#       username: example
+#     - network: LinkedIn
+#       username: example
 
-  address:
-    street: "Sikkim Government Science College Chakung"
-    city: Soreng
-    region: West Sikkim
-    postalCode: "737121"
-    countryCode: IN
+#   address:
+#     street: "Sikkim Government Science College Chakung"
+#     city: Soreng
+#     region: West Sikkim
+#     postalCode: "737121"
+#     countryCode: IN
 
-  sections:
-    Education:
-      - institution: Sikkim Manipal Institute of Technology, Sikkim Manipal University
-        location: Sikkim, India
-        url: ""
-        area: "Topic: To Study the Compressibility of Magnetohydrodynamic (MHD) Waves in Perspective of Turbulence heating of Solar Corona"
-        studyType: Ph.D. (Pursuing)
-        start_date: 2021
-        end_date: ""
-        score: ""
-        courses: ""
-        highlights: []
+#   sections:
+#     Education:
+#       - institution: Sikkim Manipal Institute of Technology, Sikkim Manipal University
+#         location: Sikkim, India
+#         url: ""
+#         area: "Topic: To Study the Compressibility of Magnetohydrodynamic (MHD) Waves in Perspective of Turbulence heating of Solar Corona"
+#         studyType: Ph.D. (Pursuing)
+#         start_date: 2021
+#         end_date: ""
+#         score: ""
+#         courses: ""
+#         highlights: []
 
-      - institution: Sikkim Manipal Institute of Technology, Sikkim Manipal University
-        location: Sikkim, India
-        url: ""
-        area: "Specialization: Plasma and High Energy Physics"
-        studyType: M.Sc. Physics
-        start_date: 2018
-        end_date: 2020
-        score: ""
-        courses: ""
-        highlights: []
+#       - institution: Sikkim Manipal Institute of Technology, Sikkim Manipal University
+#         location: Sikkim, India
+#         url: ""
+#         area: "Specialization: Plasma and High Energy Physics"
+#         studyType: M.Sc. Physics
+#         start_date: 2018
+#         end_date: 2020
+#         score: ""
+#         courses: ""
+#         highlights: []
 
-      - area: ""
-        institution: Sikkim Government College, Tadong, Sikkim University
-        location: Sikkim, India
-        url: ""
-        studyType: B.Sc. Physics
-        start_date: 2015
-        end_date: 2018
-        score: ""
-        courses: ""
-        highlights: []
+#       - area: ""
+#         institution: Sikkim Government College, Tadong, Sikkim University
+#         location: Sikkim, India
+#         url: ""
+#         studyType: B.Sc. Physics
+#         start_date: 2015
+#         end_date: 2018
+#         score: ""
+#         courses: ""
+#         highlights: []
 
-    Experience:
-      - company: Sikkim Government Science College
-        position: Assistant Professor of Physics
-        location: Chakung,<br> Sikkim, India
-        start_date: 2021-09-08
-        end_date: ""
-        summary: Teaching undergraduate physics courses, mentoring students, and contributing to academic and institutional development.
-        highlights:
-          - Deliver undergraduate courses in Physics
-          - Mentor and guide students in academic and research activities
-          - Participate in departmental and institutional committees
-          - Engage in Faculty Development Programs (FDPs) for continuous growth
+#     Experience:
+#       - company: Sikkim Government Science College
+#         position: Assistant Professor of Physics
+#         location: Chakung,<br> Sikkim, India
+#         start_date: 2021-09-08
+#         end_date: ""
+#         summary: Teaching undergraduate physics courses, mentoring students, and contributing to academic and institutional development.
+#         highlights:
+#           - Deliver undergraduate courses in Physics
+#           - Mentor and guide students in academic and research activities
+#           - Participate in departmental and institutional committees
+#           - Engage in Faculty Development Programs (FDPs) for continuous growth
 
-      - company: Institute for Plasma Research (IPR)
-        position: Summer Research Intern (SSP-2019)
-        location: Gandhinagar,<br> Gujarat, India
-        start_date: 2019-05-27
-        end_date: 2019-07-05
-        summary: Conducted a research project titled "Electromagnetic effect on temperature gradient driven unstable waves" under the Summer Students Program (SSP-2019).
-        highlights:
-          - Performed independent research work in plasma physics
-          - Studied electromagnetic effects on temperature gradient driven instabilities
-          - Completed project as part of a national-level research internship program
+#       - company: Institute for Plasma Research (IPR)
+#         position: Summer Research Intern (SSP-2019)
+#         location: Gandhinagar,<br> Gujarat, India
+#         start_date: 2019-05-27
+#         end_date: 2019-07-05
+#         summary: Conducted a research project titled "Electromagnetic effect on temperature gradient driven unstable waves" under the Summer Students Program (SSP-2019).
+#         highlights:
+#           - Performed independent research work in plasma physics
+#           - Studied electromagnetic effects on temperature gradient driven instabilities
+#           - Completed project as part of a national-level research internship program
 
-    Publications:
-      - title: A Linear Analysis of Torsional Alfvén Waves in Open Twisted Divergent Magnetic Flux Tubes for Coronal Heating
-        authors:
-          - Bivek Pradhan
-          - Gobinda Chandra Mishra
-          - Pralay Kumar Karmakar
-          - Utpal Deka
-        publisher: Solar Physics
-        releaseDate: 2024-01-01
-        url: https://doi.org/10.1007/s11207-024-02372-1
-        summary: A linear analysis of torsional Alfvén wave behavior and energy transfer in an open, twisted, divergent magnetic flux tube, showing that intermediate wave frequencies most efficiently transmit energy to heat the solar corona.
+#     Publications:
+#       - title: A Linear Analysis of Torsional Alfvén Waves in Open Twisted Divergent Magnetic Flux Tubes for Coronal Heating
+#         authors:
+#           - Bivek Pradhan
+#           - Gobinda Chandra Mishra
+#           - Pralay Kumar Karmakar
+#           - Utpal Deka
+#         publisher: Solar Physics
+#         releaseDate: 2024-01-01
+#         url: https://doi.org/10.1007/s11207-024-02372-1
+#         summary: A linear analysis of torsional Alfvén wave behavior and energy transfer in an open, twisted, divergent magnetic flux tube, showing that intermediate wave frequencies most efficiently transmit energy to heat the solar corona.
 
-      - title: A Critical Review on Turbulent Energy Dissipation Mechanism in Solar Corona to Astrophysical Systems and a Physics-Informed Neural Network Approach
-        authors:
-          - Bivek Pradhan
-          - Utpal Deka
-          - Gobinda Chandra Mishra
-        publisher: Solar Physics
-        releaseDate: 2025-01-01
-        url: https://doi.org/10.1007/s11207-025-02583-0
-        summary: A review of turbulent energy dissipation mechanisms in MHD systems relevant to coronal heating, synthesizing classical turbulence theories and evaluating physics-informed neural networks as an emerging modeling approach.
+#       - title: A Critical Review on Turbulent Energy Dissipation Mechanism in Solar Corona to Astrophysical Systems and a Physics-Informed Neural Network Approach
+#         authors:
+#           - Bivek Pradhan
+#           - Utpal Deka
+#           - Gobinda Chandra Mishra
+#         publisher: Solar Physics
+#         releaseDate: 2025-01-01
+#         url: https://doi.org/10.1007/s11207-025-02583-0
+#         summary: A review of turbulent energy dissipation mechanisms in MHD systems relevant to coronal heating, synthesizing classical turbulence theories and evaluating physics-informed neural networks as an emerging modeling approach.
 
-      - title: Alfvén Wave Mode Coupling as a Source of Compressible Acoustic Waves in the Solar Corona
-        authors:
-          - Bivek Pradhan
-          - Gobinda Chandra Mishra
-          - Utpal Deka
-        publisher: CRC Press (Applied Research in Engineering Sciences)
-        releaseDate: 2025-01-01
-        url: ""
-        summary: Investigates the generation of compressible acoustic waves through Alfvén wave mode coupling in the solar corona.
+#       - title: Alfvén Wave Mode Coupling as a Source of Compressible Acoustic Waves in the Solar Corona
+#         authors:
+#           - Bivek Pradhan
+#           - Gobinda Chandra Mishra
+#           - Utpal Deka
+#         publisher: CRC Press (Applied Research in Engineering Sciences)
+#         releaseDate: 2025-01-01
+#         url: ""
+#         summary: Investigates the generation of compressible acoustic waves through Alfvén wave mode coupling in the solar corona.
  
-      - title: Parametric Decay Instability as a Source of Turbulence in an Open Leakage Permitting Vertical Solar Coronal Domain
-        authors:
-          - Bivek Pradhan
-          - Utpal Deka
-        publisher: Solar Physics
-        releaseDate: 2026-01-01
-        url: https://doi.org/10.1007/s11207-026-02662-w
-        summary: A study of parametric decay instability as a turbulence-generating mechanism in an open, leakage-permitting vertical solar coronal domain.
+#       - title: Parametric Decay Instability as a Source of Turbulence in an Open Leakage Permitting Vertical Solar Coronal Domain
+#         authors:
+#           - Bivek Pradhan
+#           - Utpal Deka
+#         publisher: Solar Physics
+#         releaseDate: 2026-01-01
+#         url: https://doi.org/10.1007/s11207-026-02662-w
+#         summary: A study of parametric decay instability as a turbulence-generating mechanism in an open, leakage-permitting vertical solar coronal domain.
 
-      - title: The Dynamics of Compressible Acoustic Waves and Torsional Alfvén Waves in Perspective of Solar Coronal Heating
-        authors:
-          - Bivek Pradhan
-          - Utpal Deka
-          - Gobinda Chandra Mishra
-        publisher: Journal of the Korean Astronomical Society
-        releaseDate: 2026-01-01
-        url: ""
-        summary: A numerical investigation of wave propagation and energy transport driven by compressible acoustic and torsional Alfvén waves in an idealized 1-D cylindrical solar flux tube.
+#       - title: The Dynamics of Compressible Acoustic Waves and Torsional Alfvén Waves in Perspective of Solar Coronal Heating
+#         authors:
+#           - Bivek Pradhan
+#           - Utpal Deka
+#           - Gobinda Chandra Mishra
+#         publisher: Journal of the Korean Astronomical Society
+#         releaseDate: 2026-01-01
+#         url: ""
+#         summary: A numerical investigation of wave propagation and energy transport driven by compressible acoustic and torsional Alfvén waves in an idealized 1-D cylindrical solar flux tube.
 
       
-    Skills:
-      - name: Physics
-        level: Advanced
-        icon: fa-solid fa-hashtag
-        keywords:
-          - Strong expertise in Physics
+#     Skills:
+#       - name: Physics
+#         level: Advanced
+#         icon: fa-solid fa-hashtag
+#         keywords:
+#           - Strong expertise in Physics
 
-      - name: Programming & Computational Tools
-        level: Intermediate
-        icon: fa-solid fa-code
-        keywords:
-          - C
-          - Python
-          - MATLAB
-          - Mathematica
-          - PLUTO, MHD Code
+#       - name: Programming & Computational Tools
+#         level: Intermediate
+#         icon: fa-solid fa-code
+#         keywords:
+#           - C
+#           - Python
+#           - MATLAB
+#           - Mathematica
+#           - PLUTO, MHD Code
 
-      - name: Software & Documentation
-        level: Advanced
-        icon: fa-solid fa-laptop
-        keywords:
-          - MS Word
-          - MS PowerPoint
-          - LaTeX
+#       - name: Software & Documentation
+#         level: Advanced
+#         icon: fa-solid fa-laptop
+#         keywords:
+#           - MS Word
+#           - MS PowerPoint
+#           - LaTeX
 
-      - name: Professional Skills
-        level: Advanced
-        icon: fa-solid fa-user
-        keywords:
-          - Communication skills
-          - Interpersonal skills
-          - Student mentoring and guidance
+#       - name: Professional Skills
+#         level: Advanced
+#         icon: fa-solid fa-user
+#         keywords:
+#           - Communication skills
+#           - Interpersonal skills
+#           - Student mentoring and guidance
 
-    Languages:
-      - name: English
-        summary: Fluent
-      - name: Hindi
-        summary: Fluent
-      - name: Nepali
-        summary: Native speaker
+#     Languages:
+#       - name: English
+#         summary: Fluent
+#       - name: Hindi
+#         summary: Fluent
+#       - name: Nepali
+#         summary: Native speaker
 
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-sun
-        keywords: "Coronal Heating, MHD Turbulence, Physics Informed Neural Network, Non-linear Dynamics"
-      - name: Computational Physics
-        icon: fa-solid fa-computer
-        keywords: "Learning AI and its potential "
-      - name: Physics Outreach & Mentorship
-        icon: fa-solid fa-chalkboard-user
-        keywords: "Making Physics Accessible, Undergraduate Research Guidance, Career Guidance/ Couselling"
+#     Interests:
+#       - name: Physics
+#         icon: fa-solid fa-sun
+#         keywords: "Coronal Heating, MHD Turbulence, Physics Informed Neural Network, Non-linear Dynamics"
+#       - name: Computational Physics
+#         icon: fa-solid fa-computer
+#         keywords: "Learning AI and its potential "
+#       - name: Physics Outreach & Mentorship
+#         icon: fa-solid fa-chalkboard-user
+#         keywords: "Making Physics Accessible, Undergraduate Research Guidance, Career Guidance/ Couselling"
 
-    # Certificates:
-    #   - name: Machine Learning
-    #     date: 2018-01-01
-    #     issuer: Stanford University
-    #     icon: fa-solid fa-location-dot
+#     # Certificates:
+#     #   - name: Machine Learning
+#     #     date: 2018-01-01
+#     #     issuer: Stanford University
+#     #     icon: fa-solid fa-location-dot
 
-    #   - name: Quantum Computing
-    #     date: 2018-01-01
-    #     issuer: Stanford University
-    #     icon: fa-solid fa-tag
+#     #   - name: Quantum Computing
+#     #     date: 2018-01-01
+#     #     issuer: Stanford University
+#     #     icon: fa-solid fa-tag
 
-    #   - name: Quantum Information
-    #     date: 2018-01-01
-    #     issuer: Stanford University
-    #     icon: fa-solid fa-envelope
+#     #   - name: Quantum Information
+#     #     date: 2018-01-01
+#     #     issuer: Stanford University
+#     #     icon: fa-solid fa-envelope
