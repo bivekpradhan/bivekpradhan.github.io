@@ -5,7 +5,7 @@ title: CV
 nav: true
 nav_order: 2
 cv_pdf: /assets/pdf/mycv.pdf # you can also use external links here
-cv_format: jsonresume # options: rendercv, jsonresume
+#cv_format: rendercv# options: rendercv, jsonresume
 description: Click on the PDF to view my full CV #This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
 toc:
   sidebar: left
