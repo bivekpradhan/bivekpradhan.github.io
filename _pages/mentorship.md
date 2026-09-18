@@ -78,7 +78,7 @@ calendar: true
   </div>
 </div>
 
-<!-- Row 3: phy_5 (full width) -->
+<!-- Row 2: phy_5 -->
 <div class="row pdf-download-row">
   <div class="col-md-12 text-center" style="margin-bottom: 10px;">
     <a href="{{ '/assets/pdf/phy_5.pdf' | relative_url }}" class="btn btn-sm z-depth-1" target="_blank" rel="noopener noreferrer">
