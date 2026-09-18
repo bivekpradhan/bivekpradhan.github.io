@@ -77,3 +77,21 @@ calendar: true
     </iframe>
   </div>
 </div>
+
+<!-- Row 3: phy_5 (full width) -->
+<div class="row pdf-download-row">
+  <div class="col-md-12 text-center" style="margin-bottom: 10px;">
+    <a href="{{ '/assets/pdf/phy_5.pdf' | relative_url }}" class="btn btn-sm z-depth-1" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-file-pdf"></i> Download PDF
+    </a>
+  </div>
+</div>
+
+<div class="row pdf-embed-row">
+  <div class="col-md-12" style="height: 70vh; min-height: 500px;">
+    <iframe src="{{ '/assets/pdf/phy_5.pdf' | relative_url }}" width="100%" height="100%" style="border: none;" allow="autoplay">
+      <p>It appears your web browser doesn't support embedded PDFs.
+      <a href="{{ '/assets/pdf/phy_5.pdf' | relative_url }}">Click here to download the PDF file.</a></p>
+    </iframe>
+  </div>
+</div>
