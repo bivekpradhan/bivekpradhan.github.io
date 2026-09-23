@@ -1,0 +1,2590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Research | Solar Coronal Heating</title>
+
+  <meta name="description"
+        content="An interactive beginner-friendly explanation of research on compressible MHD waves, turbulence and solar coronal heating.">
+
+  <style>
+    /* =========================================================
+       GENERAL
+    ========================================================= */
+
+    :root {
+      --ink: #172033;
+      --muted: #5f6b7a;
+      --line: #d9dee7;
+
+      --panel: #f7f9fc;
+      --white: #ffffff;
+
+      --accent: #3857d6;
+      --accent-light: #eef1ff;
+
+      --wave: #3977a9;
+      --warm: #c96b32;
+
+      --success: #347b57;
+      --success-bg: #edf8f2;
+
+      --danger: #a94e4e;
+      --danger-bg: #fff1f1;
+
+      --max-width: 1000px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       PAGE
+    ========================================================= */
+
+    .research-page {
+      width: min(100% - 32px, var(--max-width));
+      margin: 40px auto 80px;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      padding: 25px 0 35px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero h1 {
+      margin: 10px 0 15px;
+
+      font-size: clamp(32px, 6vw, 55px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 800px;
+
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .hero-question {
+      margin-top: 25px;
+
+      padding: 18px 20px;
+
+      background: var(--accent-light);
+
+      border-left: 5px solid var(--accent);
+
+      border-radius: 10px;
+
+      font-size: 17px;
+    }
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .lesson-nav {
+      display: flex;
+      gap: 8px;
+
+      overflow-x: auto;
+
+      padding: 8px 0 15px;
+
+      scrollbar-width: thin;
+    }
+
+    .lesson-nav button {
+      flex: 0 0 auto;
+
+      padding: 10px 15px;
+
+      min-height: 44px;
+
+      border: 1px solid var(--line);
+
+      background: white;
+
+      color: var(--muted);
+
+      border-radius: 999px;
+
+      font-weight: 650;
+    }
+
+    .lesson-nav button:hover {
+      border-color: var(--accent);
+    }
+
+    .lesson-nav button.active {
+      color: var(--accent);
+
+      background: var(--accent-light);
+
+      border-color: #b9c4ff;
+    }
+
+    /* =========================================================
+       PROGRESS
+    ========================================================= */
+
+    .progress-container {
+      width: 100%;
+      height: 7px;
+
+      background: #e7eaf0;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+
+      margin-bottom: 25px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 16.6%;
+
+      background: var(--accent);
+
+      transition: width 0.3s ease;
+    }
+
+    /* =========================================================
+       SECTIONS
+    ========================================================= */
+
+    .lesson-section {
+      display: none;
+
+      animation: fadeIn 0.25s ease;
+    }
+
+    .lesson-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================================================
+       CARDS
+    ========================================================= */
+
+    .card {
+      padding: 25px;
+
+      margin-bottom: 18px;
+
+      background: var(--panel);
+
+      border: 1px solid var(--line);
+
+      border-radius: 18px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+
+      font-size: 25px;
+
+      line-height: 1.2;
+    }
+
+    .card h3 {
+      margin-top: 0;
+
+      font-size: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    /* =========================================================
+       GRID
+    ========================================================= */
+
+    .grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 15px;
+    }
+
+    .mini-card {
+      padding: 18px;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 14px;
+    }
+
+    .mini-card strong {
+      display: block;
+
+      margin-bottom: 5px;
+    }
+
+    .mini-card span {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       NOTE
+    ========================================================= */
+
+    .research-note {
+      margin-top: 18px;
+
+      padding: 15px 17px;
+
+      background: var(--accent-light);
+
+      border-left: 4px solid var(--accent);
+
+      border-radius: 8px;
+    }
+
+    /* =========================================================
+       FLOW DIAGRAM
+    ========================================================= */
+
+    .flow {
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      overflow-x: auto;
+
+      padding: 10px 2px 15px;
+    }
+
+    .flow-node {
+      min-width: 130px;
+
+      padding: 15px 10px;
+
+      text-align: center;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 12px;
+
+      font-size: 14px;
+    }
+
+    .flow-arrow {
+      font-size: 23px;
+
+      color: var(--muted);
+    }
+
+    /* =========================================================
+       SVG
+    ========================================================= */
+
+    .diagram {
+      width: 100%;
+
+      height: auto;
+
+      display: block;
+
+      margin-top: 18px;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 14px;
+    }
+
+    /* =========================================================
+       CONTROLS
+    ========================================================= */
+
+    .controls {
+      display: grid;
+
+      gap: 12px;
+    }
+
+    .controls label {
+      font-weight: 700;
+
+      font-size: 14px;
+    }
+
+    .controls input[type="range"] {
+      width: 100%;
+    }
+
+    .value {
+      color: var(--accent);
+
+      font-variant-numeric: tabular-nums;
+    }
+
+    .result {
+      min-height: 48px;
+
+      padding: 13px;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 10px;
+    }
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 15px;
+    }
+
+    .btn {
+      min-height: 44px;
+
+      padding: 10px 15px;
+
+      border: 1px solid var(--line);
+
+      background: white;
+
+      border-radius: 10px;
+
+      font-weight: 650;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+    }
+
+    .btn-primary {
+      color: white;
+
+      background: var(--accent);
+
+      border-color: var(--accent);
+    }
+
+    /* =========================================================
+       EQUATION
+    ========================================================= */
+
+    .equation {
+      margin: 20px 0;
+
+      padding: 18px;
+
+      background: #ffffff;
+
+      border: 1px solid var(--line);
+
+      border-radius: 10px;
+
+      text-align: center;
+
+      font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+      font-size: clamp(18px, 3vw, 25px);
+
+      overflow-x: auto;
+    }
+
+    /* =========================================================
+       QUIZ
+    ========================================================= */
+
+    .quiz-question {
+      font-size: 20px;
+
+      font-weight: 750;
+
+      margin: 15px 0;
+    }
+
+    .quiz-answer {
+      width: 100%;
+
+      padding: 13px;
+
+      margin: 7px 0;
+
+      text-align: left;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 10px;
+    }
+
+    .quiz-answer:hover {
+      border-color: var(--accent);
+    }
+
+    .quiz-answer.correct {
+      background: var(--success-bg);
+
+      border-color: var(--success);
+
+      color: var(--success);
+    }
+
+    .quiz-answer.wrong {
+      background: var(--danger-bg);
+
+      border-color: var(--danger);
+
+      color: var(--danger);
+    }
+
+    .quiz-feedback {
+      margin-top: 15px;
+
+      padding: 13px;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 10px;
+    }
+
+    /* =========================================================
+       SMALL TEXT
+    ========================================================= */
+
+    .small {
+      font-size: 13px;
+
+      color: var(--muted);
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .research-footer {
+      margin-top: 45px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid var(--line);
+
+      text-align: center;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 650px) {
+
+      .research-page {
+        width: min(100% - 22px, var(--max-width));
+
+        margin-top: 20px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-node {
+        min-width: 110px;
+      }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<main class="research-page">
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <header class="hero">
+
+    <div class="eyebrow">
+      Interactive Research Explainer
+    </div>
+
+    <h1>
+      How Can Waves Heat the Solar Corona?
+    </h1>
+
+    <p>
+      A beginner-friendly journey into my research on
+      <strong>Alfvén waves, compressible magnetohydrodynamics,
+      nonlinear wave coupling and turbulence</strong>
+      in the solar corona.
+    </p>
+
+    <div class="hero-question">
+
+      <strong>The big question:</strong>
+
+      How can energy originating from the Sun's surface
+      travel through the magnetized plasma and eventually
+      contribute to heating the extremely hot solar corona?
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <nav class="lesson-nav">
+
+    <button class="active" data-tab="0">
+      1. The Mystery
+    </button>
+
+    <button data-tab="1">
+      2. Magnetic Waves
+    </button>
+
+    <button data-tab="2">
+      3. My Mechanism
+    </button>
+
+    <button data-tab="3">
+      4. Turbulence
+    </button>
+
+    <button data-tab="4">
+      5. My Simulation
+    </button>
+
+    <button data-tab="5">
+      6. Test Yourself
+    </button>
+
+  </nav>
+
+
+  <!-- =====================================================
+       PROGRESS
+  ====================================================== -->
+
+  <div class="progress-container">
+
+    <div
+      class="progress-bar"
+      id="progressBar">
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SECTION 1
+  ====================================================== -->
+
+  <section
+    class="lesson-section active"
+    data-section="0">
+
+    <div class="card">
+
+      <h2>
+        1. The Mystery: Why Is the Corona So Hot?
+      </h2>
+
+      <p>
+        The visible surface of the Sun, called the
+        <strong>photosphere</strong>, has a temperature of
+        roughly 5,500 °C.
+      </p>
+
+      <p>
+        Surprisingly, the Sun's outer atmosphere—the
+        <strong>corona</strong>—can reach temperatures of
+        approximately one million degrees Celsius or more.
+      </p>
+
+
+      <svg
+        class="diagram"
+        viewBox="0 0 700 280"
+        role="img"
+        aria-label="Schematic of the Sun and its hot corona">
+
+        <circle
+          cx="130"
+          cy="140"
+          r="80"
+          fill="#f3d28b"
+          stroke="#b98232"
+          stroke-width="3">
+        </circle>
+
+        <text
+          x="130"
+          y="146"
+          text-anchor="middle"
+          font-size="18"
+          font-weight="700">
+          SUN
+        </text>
+
+        <g
+          fill="none"
+          stroke="#b98232"
+          stroke-width="3">
+
+          <path d="M175 85 Q300 15 450 100"></path>
+
+          <path d="M185 110 Q330 60 500 130"></path>
+
+          <path d="M185 165 Q340 225 500 145"></path>
+
+          <path d="M175 195 Q300 260 440 190"></path>
+
+        </g>
+
+        <text
+          x="460"
+          y="80"
+          font-size="18"
+          font-weight="700">
+          CORONA
+        </text>
+
+        <text
+          x="460"
+          y="105"
+          font-size="14">
+          ~1 million °C+
+        </text>
+
+        <text
+          x="35"
+          y="250"
+          font-size="14">
+          Photosphere ≈ 5,500 °C
+        </text>
+
+      </svg>
+
+
+      <p>
+        This creates one of the fundamental problems of
+        solar physics:
+      </p>
+
+      <div class="research-note">
+
+        <strong>
+          How does energy move from the solar surface
+          into the corona, and how is that energy converted
+          into heat?
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div class="grid">
+
+      <div class="mini-card">
+
+        <strong>Energy source</strong>
+
+        <span>
+          Solar motions and magnetic activity provide
+          energy to the plasma.
+        </span>
+
+      </div>
+
+
+      <div class="mini-card">
+
+        <strong>Energy transport</strong>
+
+        <span>
+          Waves and magnetic disturbances can transport
+          energy through the plasma.
+        </span>
+
+      </div>
+
+
+      <div class="mini-card">
+
+        <strong>Energy conversion</strong>
+
+        <span>
+          Wave energy must ultimately be transferred to
+          smaller scales and dissipated.
+        </span>
+
+      </div>
+
+
+      <div class="mini-card">
+
+        <strong>My focus</strong>
+
+        <span>
+          What happens when the plasma is
+          <strong>compressible</strong>?
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SECTION 2
+  ====================================================== -->
+
+  <section
+    class="lesson-section"
+    data-section="1">
+
+    <div class="card">
+
+      <h2>
+        2. Meet the Alfvén Wave
+      </h2>
+
+      <p>
+        The solar corona is a
+        <strong>magnetized plasma</strong>.
+        This means that magnetic fields strongly influence
+        the motion of the plasma.
+      </p>
+
+      <p>
+        One important type of disturbance in such a plasma
+        is the <strong>Alfvén wave</strong>.
+      </p>
+
+
+      <svg
+        class="diagram"
+        viewBox="0 0 700 300"
+        role="img"
+        aria-label="Animated Alfvén wave">
+
+        <line
+          x1="50"
+          y1="80"
+          x2="650"
+          y2="80"
+          stroke="#b8c0cc"
+          stroke-width="2">
+        </line>
+
+        <line
+          x1="50"
+          y1="150"
+          x2="650"
+          y2="150"
+          stroke="#b8c0cc"
+          stroke-width="2">
+        </line>
+
+        <line
+          x1="50"
+          y1="220"
+          x2="650"
+          y2="220"
+          stroke="#b8c0cc"
+          stroke-width="2">
+        </line>
+
+        <path
+          id="wavePath"
+          d="M50 150 Q100 95 150 150 T250 150 T350 150 T450 150 T550 150 T650 150"
+          fill="none"
+          stroke="#3977a9"
+          stroke-width="5">
+        </path>
+
+        <text
+          x="50"
+          y="45"
+          font-size="15"
+          font-weight="700">
+          Magnetic field direction →
+        </text>
+
+        <text
+          x="50"
+          y="275"
+          font-size="13">
+          The disturbance propagates along the magnetic field.
+        </text>
+
+      </svg>
+
+
+      <div class="actions">
+
+        <button
+          class="btn btn-primary"
+          id="waveToggle">
+          Pause Wave
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>
+        Why Torsional Alfvén Waves?
+      </h2>
+
+      <p>
+        Your research focuses on a type of Alfvénic
+        disturbance involving transverse or azimuthal motion.
+      </p>
+
+      <p>
+        Instead of simply pushing the plasma upward,
+        the motion can <strong>twist the magnetic field</strong>.
+      </p>
+
+
+      <div class="flow">
+
+        <div class="flow-node">
+          Boundary<br>
+          <strong>Driver</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Magnetic Field<br>
+          <strong>Twist</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Alfvén Wave<br>
+          <strong>Energy Transport</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Nonlinear<br>
+          <strong>Interaction</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SECTION 3
+  ====================================================== -->
+
+  <section
+    class="lesson-section"
+    data-section="2">
+
+    <div class="card">
+
+      <h2>
+        3. The Key Idea Behind My Research
+      </h2>
+
+      <p>
+        In a simplified picture, Alfvén waves can be treated
+        as largely incompressible.
+      </p>
+
+      <p>
+        That means the dominant motion can bend or twist the
+        magnetic field without producing large changes in
+        density.
+      </p>
+
+      <p>
+        But the real plasma does not have to behave in such
+        an idealized way.
+      </p>
+
+
+      <div class="research-note">
+
+        <strong>
+          My research asks:
+        </strong>
+
+        What happens to Alfvénic dynamics when
+        <strong>compressibility</strong> becomes important?
+
+      </div>
+
+
+      <svg
+        class="diagram"
+        viewBox="0 0 700 360"
+        role="img"
+        aria-label="Alfvén and compressible wave coupling">
+
+        <defs>
+
+          <marker
+            id="arrow"
+            markerWidth="8"
+            markerHeight="8"
+            refX="7"
+            refY="4"
+            orient="auto">
+
+            <path
+              d="M0 0 L8 4 L0 8 z"
+              fill="#5f6b7a">
+            </path>
+
+          </marker>
+
+        </defs>
+
+
+        <rect
+          x="35"
+          y="100"
+          width="190"
+          height="100"
+          rx="15"
+          fill="#eef1ff"
+          stroke="#b9c4ff">
+        </rect>
+
+        <text
+          x="130"
+          y="135"
+          text-anchor="middle"
+          font-size="17"
+          font-weight="700">
+          Alfvén Wave
+        </text>
+
+        <text
+          x="130"
+          y="163"
+          text-anchor="middle"
+          font-size="13">
+          Magnetic + transverse
+        </text>
+
+        <text
+          x="130"
+          y="183"
+          text-anchor="middle"
+          font-size="13">
+          motion
+        </text>
+
+
+        <rect
+          x="475"
+          y="100"
+          width="190"
+          height="100"
+          rx="15"
+          fill="#fff4ea"
+          stroke="#e6c2a0">
+        </rect>
+
+        <text
+          x="570"
+          y="135"
+          text-anchor="middle"
+          font-size="17"
+          font-weight="700">
+          Compressible Wave
+        </text>
+
+        <text
+          x="570"
+          y="163"
+          text-anchor="middle"
+          font-size="13">
+          Density + pressure
+        </text>
+
+        <text
+          x="570"
+          y="183"
+          text-anchor="middle"
+          font-size="13">
+          variations
+        </text>
+
+
+        <path
+          d="M225 125 C320 55 390 55 475 125"
+          fill="none"
+          stroke="#5f6b7a"
+          stroke-width="2.5"
+          marker-end="url(#arrow)">
+        </path>
+
+
+        <path
+          d="M475 175 C390 245 320 245 225 175"
+          fill="none"
+          stroke="#5f6b7a"
+          stroke-width="2.5"
+          marker-end="url(#arrow)">
+        </path>
+
+
+        <circle
+          cx="350"
+          cy="165"
+          r="50"
+          fill="white"
+          stroke="#c8ced8"
+          stroke-width="2">
+        </circle>
+
+        <text
+          x="350"
+          y="160"
+          text-anchor="middle"
+          font-size="15"
+          font-weight="700">
+          Nonlinear
+        </text>
+
+        <text
+          x="350"
+          y="180"
+          text-anchor="middle"
+          font-size="13">
+          coupling
+        </text>
+
+
+        <text
+          x="350"
+          y="315"
+          text-anchor="middle"
+          font-size="14">
+          Energy can move between wave modes and spatial scales.
+        </text>
+
+      </svg>
+
+
+      <p>
+        A sufficiently strong Alfvénic disturbance can
+        participate in nonlinear processes that generate
+        compressive fluctuations.
+      </p>
+
+      <p>
+        Those fluctuations can then interact further with the
+        plasma, creating a pathway toward increasingly complex
+        dynamics.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>
+        Explore the Effect of Driver Amplitude
+      </h2>
+
+      <div class="controls">
+
+        <label for="amplitude">
+
+          Driver amplitude:
+
+          <span
+            class="value"
+            id="amplitudeValue">
+            0.40
+          </span>
+
+        </label>
+
+
+        <input
+          id="amplitude"
+          type="range"
+          min="0.10"
+          max="1.00"
+          step="0.05"
+          value="0.40">
+
+
+        <div
+          class="result"
+          id="amplitudeResult">
+
+          Moderate amplitude:
+          nonlinear effects may develop gradually.
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SECTION 4
+  ====================================================== -->
+
+  <section
+    class="lesson-section"
+    data-section="3">
+
+    <div class="card">
+
+      <h2>
+        4. From Organized Waves to Turbulence
+      </h2>
+
+      <p>
+        Imagine stirring water.
+        Energy introduced at a large scale can interact with
+        the flow and create smaller structures.
+      </p>
+
+      <p>
+        Plasma turbulence follows a related idea, although
+        the physics is much richer because magnetic fields,
+        velocity, density and pressure all interact.
+      </p>
+
+
+      <div class="flow">
+
+        <div class="flow-node">
+          Energy injected<br>
+          <strong>Large scale</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Nonlinear<br>
+          <strong>Interactions</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Energy transfer<br>
+          <strong>Across scales</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Small scales<br>
+          <strong>Dissipation</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>
+        Why Do I Look at a Spectrum?
+      </h2>
+
+      <p>
+        A power spectrum tells us how fluctuation energy is
+        distributed among different spatial scales.
+      </p>
+
+
+      <svg
+        class="diagram"
+        viewBox="0 0 700 310"
+        role="img"
+        aria-label="Schematic power spectrum">
+
+        <line
+          x1="80"
+          y1="255"
+          x2="650"
+          y2="255"
+          stroke="#596273">
+        </line>
+
+        <line
+          x1="80"
+          y1="255"
+          x2="80"
+          y2="40"
+          stroke="#596273">
+        </line>
+
+
+        <path
+          d="M105 75 L610 225"
+          fill="none"
+          stroke="#3977a9"
+          stroke-width="4">
+        </path>
+
+
+        <text
+          x="365"
+          y="292"
+          text-anchor="middle"
+          font-size="14">
+
+          Wavenumber k →
+          smaller spatial scales
+
+        </text>
+
+
+        <text
+          x="25"
+          y="155"
+          transform="rotate(-90 25 155)"
+          text-anchor="middle"
+          font-size="14">
+
+          Power E(k)
+
+        </text>
+
+
+        <text
+          x="390"
+          y="155"
+          font-size="15">
+
+          E(k) ∝ k⁻²
+
+        </text>
+
+      </svg>
+
+
+      <p>
+        In your analysis, the spectrum develops an
+        approximately <strong>k⁻²</strong> slope over the
+        usable range.
+      </p>
+
+      <div class="research-note">
+
+        <strong>Important:</strong>
+
+        A spectral slope alone does not prove fully developed
+        turbulence. That is why your research also considers
+        additional diagnostics such as vorticity, current
+        density, PDFs, kurtosis and structure functions.
+
+      </div>
+
+    </div>
+
+
+    <div class="grid">
+
+      <div class="mini-card">
+
+        <strong>Power spectrum</strong>
+
+        <span>
+          Distribution of fluctuation power across scales.
+        </span>
+
+      </div>
+
+
+      <div class="mini-card">
+
+        <strong>Vorticity / current density</strong>
+
+        <span>
+          Reveals localized rotational and magnetic structures.
+        </span>
+
+      </div>
+
+
+      <div class="mini-card">
+
+        <strong>PDF and kurtosis</strong>
+
+        <span>
+          Helps identify intermittency and strong fluctuation
+          tails.
+        </span>
+
+      </div>
+
+
+      <div class="mini-card">
+
+        <strong>Structure functions</strong>
+
+        <span>
+          Examine how fluctuations change with spatial scale.
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SECTION 5
+  ====================================================== -->
+
+  <section
+    class="lesson-section"
+    data-section="4">
+
+    <div class="card">
+
+      <h2>
+        5. How I Investigate the Problem
+      </h2>
+
+      <p>
+        I use numerical magnetohydrodynamic simulations to
+        study the evolution of waves in a magnetized plasma.
+      </p>
+
+      <p>
+        The simulations are performed using the
+        <strong>PLUTO</strong> code.
+      </p>
+
+
+      <div class="flow">
+
+        <div class="flow-node">
+          Solar corona<br>
+          <strong>Model</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Boundary<br>
+          <strong>Driver</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          MHD<br>
+          <strong>Evolution</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Wave coupling<br>
+          <strong>Turbulence</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Diagnostics<br>
+          <strong>Analysis</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>
+        The Boundary Driver
+      </h2>
+
+      <p>
+        A major part of your numerical experiment is the
+        structured transverse perturbation introduced at the
+        lower boundary.
+      </p>
+
+
+      <div class="equation">
+
+        δV<sub>y</sub>(x,t)
+        ∝
+        (x/W)e<sup>−x²/W²</sup>
+        × R(t)
+        × Σ sin(ω<sub>n</sub>t + φ<sub>n</sub>)
+
+      </div>
+
+
+      <p>
+        The spatial factor
+        <strong>(x/W)e<sup>−x²/W²</sup></strong>
+        gives the perturbation a localized,
+        antisymmetric Hermite-Gaussian-like profile.
+      </p>
+
+
+      <svg
+        class="diagram"
+        viewBox="0 0 700 270"
+        role="img"
+        aria-label="Hermite Gaussian driver profile">
+
+        <line
+          x1="60"
+          y1="190"
+          x2="650"
+          y2="190"
+          stroke="#697384">
+        </line>
+
+        <line
+          x1="350"
+          y1="35"
+          x2="350"
+          y2="220"
+          stroke="#697384"
+          stroke-dasharray="5 5">
+        </line>
+
+
+        <path
+          d="
+          M65 190
+          C120 190 160 180 205 125
+          C240 85 275 145 350 190
+          C425 235 460 295 500 255
+          C540 210 580 192 650 190
+          "
+          fill="none"
+          stroke="#3977a9"
+          stroke-width="4">
+        </path>
+
+
+        <text
+          x="350"
+          y="240"
+          text-anchor="middle"
+          font-size="13">
+
+          x = 0
+
+        </text>
+
+
+        <text
+          x="90"
+          y="50"
+          font-size="14"
+          font-weight="700">
+
+          Localized transverse driver
+
+        </text>
+
+      </svg>
+
+
+      <p>
+        The temporal component can contain multiple
+        frequencies and phases, allowing the boundary forcing
+        to be more representative of a fluctuating driver
+        rather than one perfectly periodic wave.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>
+        The Numerical Experiment in One Sentence
+      </h2>
+
+
+      <div class="research-note">
+
+        <strong>
+
+          Inject structured transverse motion at the lower
+          boundary →
+
+          follow nonlinear MHD evolution →
+
+          identify compressible coupling and multiscale
+          transfer →
+
+          quantify the resulting turbulent signatures.
+
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>
+        What I Am Trying to Understand
+      </h2>
+
+      <div class="grid">
+
+        <div class="mini-card">
+
+          <strong>Wave dynamics</strong>
+
+          <span>
+            How does the injected Alfvénic disturbance evolve?
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <strong>Compressibility</strong>
+
+          <span>
+            How strongly do density and pressure fluctuations
+            participate?
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <strong>Nonlinear coupling</strong>
+
+          <span>
+            Can wave modes interact and generate secondary
+            fluctuations?
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <strong>Turbulent transfer</strong>
+
+          <span>
+            Does energy move across spatial scales in a way
+            consistent with turbulent dynamics?
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SECTION 6
+  ====================================================== -->
+
+  <section
+    class="lesson-section"
+    data-section="5">
+
+    <div class="card">
+
+      <h2>
+        6. Test Your Understanding
+      </h2>
+
+      <p class="small">
+        Four questions to see whether you have understood
+        the basic research story.
+      </p>
+
+
+      <div class="quiz-question"
+           id="quizQuestion">
+
+      </div>
+
+
+      <div id="quizAnswers"></div>
+
+
+      <div
+        class="quiz-feedback"
+        id="quizFeedback"
+        aria-live="polite">
+
+        Choose an answer.
+
+      </div>
+
+
+      <div class="actions">
+
+        <button
+          class="btn btn-primary"
+          id="nextQuestion"
+          disabled>
+
+          Next Question
+
+        </button>
+
+
+        <button
+          class="btn"
+          id="restartQuiz">
+
+          Restart Quiz
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>
+        Your Research in One Picture
+      </h2>
+
+
+      <div class="flow">
+
+        <div class="flow-node">
+          Solar<br>
+          <strong>Surface</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Structured<br>
+          <strong>Driver</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Alfvén<br>
+          <strong>Waves</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Compressible<br>
+          <strong>Coupling</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Turbulent<br>
+          <strong>Transfer</strong>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-node">
+          Energy<br>
+          <strong>Dissipation</strong>
+        </div>
+
+      </div>
+
+
+      <div class="research-note">
+
+        <strong>
+          My central research question:
+        </strong>
+
+        How does compressibility alter the nonlinear
+        evolution of Alfvénic disturbances and the resulting
+        turbulent energy transfer relevant to solar coronal
+        heating?
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>
+        If You Remember Only Five Things...
+      </h2>
+
+      <div class="grid">
+
+        <div class="mini-card">
+
+          <strong>1. The corona is extremely hot.</strong>
+
+          <span>
+            Its temperature is much higher than the visible
+            solar surface.
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <strong>2. The corona is magnetized.</strong>
+
+          <span>
+            Magnetic fields strongly influence plasma motion.
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <strong>3. Alfvén waves transport energy.</strong>
+
+          <span>
+            They are important magnetic-plasma disturbances.
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <strong>4. Compressibility matters.</strong>
+
+          <span>
+            Density and pressure fluctuations can couple with
+            Alfvénic dynamics.
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <strong>5. Turbulence can redistribute energy.</strong>
+
+          <span>
+            Nonlinear interactions can transfer energy across
+            spatial scales.
+          </span>
+
+        </div>
+
+
+        <div class="mini-card">
+
+          <strong>Your research connects all five.</strong>
+
+          <span>
+            Numerical MHD simulations are used to investigate
+            this chain of physical processes.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer class="research-footer">
+
+    Interactive research explainer ·
+    Solar coronal heating ·
+    Compressible magnetohydrodynamics
+
+  </footer>
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* =========================================================
+     LESSON NAVIGATION
+  ========================================================= */
+
+  const tabs =
+    document.querySelectorAll(".lesson-nav button");
+
+  const sections =
+    document.querySelectorAll(".lesson-section");
+
+  const progressBar =
+    document.getElementById("progressBar");
+
+
+  function showSection(index) {
+
+    if (index < 0) {
+      index = 0;
+    }
+
+    if (index >= sections.length) {
+      index = sections.length - 1;
+    }
+
+
+    tabs.forEach(function (button, i) {
+
+      button.classList.toggle(
+        "active",
+        i === index
+      );
+
+    });
+
+
+    sections.forEach(function (section, i) {
+
+      section.classList.toggle(
+        "active",
+        i === index
+      );
+
+    });
+
+
+    const progress =
+      ((index + 1) / sections.length) * 100;
+
+    progressBar.style.width =
+      progress + "%";
+
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  tabs.forEach(function (button, index) {
+
+    button.addEventListener(
+      "click",
+      function () {
+
+        showSection(index);
+
+      }
+    );
+
+  });
+
+
+  /* =========================================================
+     ALFVÉN WAVE ANIMATION
+  ========================================================= */
+
+  const wavePath =
+    document.getElementById("wavePath");
+
+  const waveToggle =
+    document.getElementById("waveToggle");
+
+
+  let waveRunning = true;
+
+  let waveTime = 0;
+
+  let animationFrame;
+
+
+  function animateWave() {
+
+    if (!waveRunning) {
+      return;
+    }
+
+
+    waveTime += 0.045;
+
+
+    const points = [];
+
+
+    for (
+      let x = 50;
+      x <= 650;
+      x += 5
+    ) {
+
+      const y =
+        150 +
+        45 *
+        Math.sin(
+          (x / 52) -
+          waveTime
+        );
+
+
+      if (x === 50) {
+
+        points.push(
+          "M" +
+          x.toFixed(1) +
+          " " +
+          y.toFixed(1)
+        );
+
+      } else {
+
+        points.push(
+          "L" +
+          x.toFixed(1) +
+          " " +
+          y.toFixed(1)
+        );
+
+      }
+
+    }
+
+
+    wavePath.setAttribute(
+      "d",
+      points.join(" ")
+    );
+
+
+    animationFrame =
+      requestAnimationFrame(
+        animateWave
+      );
+
+  }
+
+
+  waveToggle.addEventListener(
+    "click",
+    function () {
+
+      waveRunning =
+        !waveRunning;
+
+
+      if (waveRunning) {
+
+        waveToggle.textContent =
+          "Pause Wave";
+
+        cancelAnimationFrame(
+          animationFrame
+        );
+
+        animateWave();
+
+      } else {
+
+        waveToggle.textContent =
+          "Play Wave";
+
+        cancelAnimationFrame(
+          animationFrame
+        );
+
+      }
+
+    }
+  );
+
+
+  animateWave();
+
+
+  /* =========================================================
+     AMPLITUDE INTERACTION
+  ========================================================= */
+
+  const amplitude =
+    document.getElementById("amplitude");
+
+  const amplitudeValue =
+    document.getElementById("amplitudeValue");
+
+  const amplitudeResult =
+    document.getElementById("amplitudeResult");
+
+
+  function updateAmplitude() {
+
+    const value =
+      Number(amplitude.value);
+
+
+    amplitudeValue.textContent =
+      value.toFixed(2);
+
+
+    if (value < 0.30) {
+
+      amplitudeResult.textContent =
+        "Low amplitude: the system is closer to a weakly nonlinear regime.";
+
+    }
+
+    else if (value < 0.65) {
+
+      amplitudeResult.textContent =
+        "Moderate amplitude: nonlinear effects may develop progressively.";
+
+    }
+
+    else {
+
+      amplitudeResult.textContent =
+        "Strong amplitude: nonlinear coupling and secondary fluctuations are expected to become more prominent.";
+
+    }
+
+  }
+
+
+  amplitude.addEventListener(
+    "input",
+    updateAmplitude
+  );
+
+
+  updateAmplitude();
+
+
+  /* =========================================================
+     QUIZ
+  ========================================================= */
+
+  const questions = [
+
+    {
+      question:
+        "What is associated with an Alfvén wave?",
+
+      answers: [
+
+        "A disturbance involving magnetic fields and plasma motion",
+
+        "Only heat",
+
+        "Only gravity",
+
+        "A chemical reaction"
+
+      ],
+
+      correct: 0
+
+    },
+
+
+    {
+      question:
+        "What is the central extension investigated in your research?",
+
+      answers: [
+
+        "Removing magnetic fields",
+
+        "Including compressible effects in Alfvénic dynamics",
+
+        "Ignoring nonlinear effects",
+
+        "Studying only the photosphere"
+
+      ],
+
+      correct: 1
+
+    },
+
+
+    {
+      question:
+        "What does a power spectrum tell us?",
+
+      answers: [
+
+        "The color of the Sun",
+
+        "How fluctuation power is distributed across spatial scales",
+
+        "The exact temperature everywhere",
+
+        "Only magnetic polarity"
+
+      ],
+
+      correct: 1
+
+    },
+
+
+    {
+      question:
+        "Why is a k⁻² slope alone not enough to establish fully developed turbulence?",
+
+      answers: [
+
+        "Every turbulent spectrum must be flat",
+
+        "One slope does not establish all turbulent diagnostics or a sufficiently broad inertial range",
+
+        "Fourier analysis cannot be used",
+
+        "Turbulence has no spectrum"
+
+      ],
+
+      correct: 1
+
+    }
+
+  ];
+
+
+  let currentQuestion = 0;
+
+  let score = 0;
+
+  let questionAnswered = false;
+
+
+  const quizQuestion =
+    document.getElementById(
+      "quizQuestion"
+    );
+
+  const quizAnswers =
+    document.getElementById(
+      "quizAnswers"
+    );
+
+  const quizFeedback =
+    document.getElementById(
+      "quizFeedback"
+    );
+
+  const nextQuestion =
+    document.getElementById(
+      "nextQuestion"
+    );
+
+  const restartQuiz =
+    document.getElementById(
+      "restartQuiz"
+    );
+
+
+  function loadQuestion() {
+
+    questionAnswered =
+      false;
+
+
+    const question =
+      questions[currentQuestion];
+
+
+    quizQuestion.textContent =
+      question.question;
+
+
+    quizAnswers.innerHTML =
+      "";
+
+
+    quizFeedback.textContent =
+      "Choose an answer.";
+
+
+    nextQuestion.disabled =
+      true;
+
+
+    nextQuestion.textContent =
+      "Next Question";
+
+
+    question.answers.forEach(
+      function (answer, index) {
+
+        const button =
+          document.createElement(
+            "button"
+          );
+
+
+        button.type =
+          "button";
+
+
+        button.className =
+          "quiz-answer";
+
+
+        button.textContent =
+          answer;
+
+
+        button.addEventListener(
+          "click",
+          function () {
+
+            checkAnswer(
+              index,
+              button
+            );
+
+          }
+        );
+
+
+        quizAnswers.appendChild(
+          button
+        );
+
+      }
+    );
+
+  }
+
+
+  function checkAnswer(
+    selected,
+    selectedButton
+  ) {
+
+    if (questionAnswered) {
+      return;
+    }
+
+
+    questionAnswered =
+      true;
+
+
+    const question =
+      questions[currentQuestion];
+
+
+    const buttons =
+      quizAnswers.querySelectorAll(
+        "button"
+      );
+
+
+    buttons.forEach(
+      function (button) {
+
+        button.disabled =
+          true;
+
+      }
+    );
+
+
+    if (
+      selected ===
+      question.correct
+    ) {
+
+      score++;
+
+
+      selectedButton.classList.add(
+        "correct"
+      );
+
+
+      quizFeedback.textContent =
+        "Correct! You have understood the key concept.";
+
+    }
+
+    else {
+
+      selectedButton.classList.add(
+        "wrong"
+      );
+
+
+      buttons[
+        question.correct
+      ].classList.add(
+        "correct"
+      );
+
+
+      quizFeedback.textContent =
+        "Not quite. The highlighted answer is the correct choice.";
+
+    }
+
+
+    nextQuestion.disabled =
+      false;
+
+
+    if (
+      currentQuestion ===
+      questions.length - 1
+    ) {
+
+      nextQuestion.textContent =
+        "See Result";
+
+    }
+
+  }
+
+
+  nextQuestion.addEventListener(
+    "click",
+    function () {
+
+      if (!questionAnswered) {
+        return;
+      }
+
+
+      if (
+        currentQuestion <
+        questions.length - 1
+      ) {
+
+        currentQuestion++;
+
+        loadQuestion();
+
+      }
+
+      else {
+
+        quizQuestion.textContent =
+          "Quiz Complete!";
+
+
+        quizAnswers.innerHTML =
+          "";
+
+
+        quizFeedback.textContent =
+          "Your score: " +
+          score +
+          "/" +
+          questions.length +
+          ". " +
+          (
+            score === questions.length
+              ? "Excellent! You have understood the core research story."
+              : "Good start! Review the sections above and try again."
+          );
+
+
+        nextQuestion.disabled =
+          true;
+
+      }
+
+    }
+  );
+
+
+  restartQuiz.addEventListener(
+    "click",
+    function () {
+
+      currentQuestion = 0;
+
+      score = 0;
+
+      loadQuestion();
+
+    }
+  );
+
+
+  loadQuestion();
+
+});
+
+</script>
+
+</body>
+</html>
