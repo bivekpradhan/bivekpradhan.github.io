@@ -89,7 +89,7 @@ latest_posts:
 </style>
 
 <p class="about-lead">
-Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assistant Professor of Physics and a researcher. I have recently taken on the mantle of guiding the next generation to build careers of purpose. I seek to create a true difference by empowering students to look past generic job titles, helping them to discover the real-world impact and daily work that truly fulfills them.
+Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assistant Professor of Physics and a researcher with a passion for education, mentorship, and career development.
 </p>
 
 <div class="phd-callout">
