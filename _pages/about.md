@@ -96,7 +96,7 @@ Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assista
 
 
 
-<div class="about-columns">
+<div class="about-lead">
   <div>
     <h3>My Research Interest</h3>
     <p>I study the enduring puzzle of coronal heating by combining analytical theory, numerical simulations, and computational techniques.</p>
