@@ -25,42 +25,35 @@ latest_posts:
 ---
 
 <style>
-  .about-lead { font-size: 1.2rem; line-height: 1.75; max-width: 65ch; margin-bottom: 1.5rem; }
+  .about-lead { font-size: 1.2rem; line-height: 1.75; max-width: 65ch; margin-bottom: 1.75rem; }
   .about-lead strong { color: var(--global-theme-color); font-weight: 600; }
 
-  /* The one standout element: the PhD work callout */
-  .phd-callout {
-    position: relative;
-    margin: 1.75rem 0 2rem;
-    padding: 1.25rem 1.5rem 1.25rem 1.75rem;
-    border-radius: 0 12px 12px 0;
-    border-left: 5px solid var(--global-theme-color);
-    background: color-mix(in srgb, var(--global-theme-color) 9%, var(--global-bg-color));
-  }
-  .phd-callout p { margin: 0; }
-  .phd-callout .phd-label { font-size: 0.9rem; color: var(--global-text-color-light); margin-bottom: 0.35rem; }
-  .phd-callout a.phd-link {
+  .about-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  .about-columns h3 { font-size: 1.15rem; margin: 0 0 0.5rem; color: var(--global-theme-color); }
+  .about-columns p { margin: 0 0 1rem; line-height: 1.7; }
+  .about-columns > div + div { padding-left: 2rem; border-left: 1px solid var(--global-divider-color); }
+
+  /* Clickable heading link */
+  .about-columns h3 a.heading-link {
     display: inline;
-    font-size: 1.15rem;
-    font-weight: 600;
-    line-height: 1.5;
-    color: var(--global-text-color);
+    color: var(--global-theme-color);
     text-decoration: none;
     background-image: linear-gradient(color-mix(in srgb, var(--global-theme-color) 35%, transparent), color-mix(in srgb, var(--global-theme-color) 35%, transparent));
     background-repeat: no-repeat;
     background-position: 0 92%;
-    background-size: 100% 0.55em;
-    transition: background-size 0.2s ease, color 0.2s ease;
+    background-size: 100% 0.5em;
     padding: 0 0.15em;
+    transition: background-size 0.2s ease, color 0.2s ease;
   }
-  .phd-callout a.phd-link:hover,
-  .phd-callout a.phd-link:focus-visible {
+  .about-columns h3 a.heading-link i { font-size: 0.7em; margin-left: 0.3em; vertical-align: 0.1em; }
+  .about-columns h3 a.heading-link:hover,
+  .about-columns h3 a.heading-link:focus-visible {
     background-size: 100% 100%;
     color: var(--global-hover-color);
   }
-  .phd-callout a.phd-link:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }
+  .about-columns h3 a.heading-link:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }
 
-  .topic-list { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0 0 2rem; list-style: none; }
+  .topic-list { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
   .topic-list li {
     padding: 0.3rem 0.85rem;
     border: 1px solid var(--global-divider-color);
@@ -68,11 +61,6 @@ latest_posts:
     font-size: 0.92rem;
     color: var(--global-text-color);
   }
-
-  .about-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
-  .about-columns h3 { font-size: 1.15rem; margin: 0 0 0.5rem; color: var(--global-theme-color); }
-  .about-columns p { margin: 0; line-height: 1.7; }
-  .about-columns > div + div { padding-left: 2rem; border-left: 1px solid var(--global-divider-color); }
 
   .about-invite {
     padding: 1.1rem 1.4rem;
@@ -92,16 +80,18 @@ latest_posts:
 Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assistant Professor of Physics and a researcher with a passion for education, mentorship, and career development.
 </p>
 
-
-
-
-
-<div class="about-lead">
+<div class="about-columns">
   <div>
-    <h3>My Research Interest</h3>
+    <h3><a class="heading-link" href="https://bivekpradhan.github.io/assets/html/solar-corona-explainer.html" target="_blank" rel="noopener">My Research Interest<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
     <p>I study the enduring puzzle of coronal heating by combining analytical theory, numerical simulations, and computational techniques.</p>
+    <ul class="topic-list">
+      <li>Magnetohydrodynamics</li>
+      <li>Alfvén waves</li>
+      <li>Compressible plasma turbulence</li>
+      <li>Coronal heating</li>
+      <li>Physics-informed neural networks</li>
+    </ul>
   </div>
-  </div> <ul class="topic-list"> <li>Magnetohydrodynamics</li> <li>Alfvén waves</li> <li>Compressible plasma turbulence</li> <li>Coronal heating</li> </li>Physics Informed Neural-Network</li> </ul> <div class="about-columns"> <div>
   <div>
     <h3>Teaching and mentoring</h3>
     <p>I enjoy making physics engaging and accessible, while helping students discover meaningful academic and career opportunities. My aim is to empower them to look beyond generic job titles and understand the real-world impact, possibilities, and everyday work that can make a career truly fulfilling.</p>
