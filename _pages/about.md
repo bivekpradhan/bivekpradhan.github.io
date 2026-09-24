@@ -45,14 +45,6 @@ latest_posts:
     padding: 0 0.15em;
     transition: background-size 0.2s ease, color 0.2s ease;
   }
-  .about-columns h3 a.heading-link i { font-size: 0.7em; margin-left: 0.3em; vertical-align: 0.1em; }
-  .about-columns h3 a.heading-link:hover,
-  .about-columns h3 a.heading-link:focus-visible {
-    background-size: 100% 100%;
-    color: var(--global-hover-color);
-  }
-  .about-columns h3 a.heading-link:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }
-
   .topic-list { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
   .topic-list li {
     padding: 0.3rem 0.85rem;
@@ -80,7 +72,7 @@ latest_posts:
 Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assistant Professor of Physics and a researcher with a passion for education, mentorship, and career development.
 </p>
 
-<div class="about-columns">
+<div class="about-lead">
   <div>
     <h3><a class="heading-link" href="https://bivekpradhan.github.io/assets/html/solar-corona-explainer.html" target="_blank" rel="noopener">My Research Interest<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
     <p>I study the enduring puzzle of coronal heating by combining analytical theory, numerical simulations, and computational techniques.</p>
