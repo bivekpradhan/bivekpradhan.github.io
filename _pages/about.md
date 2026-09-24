@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Assistant Professor of Physics | PhD Scholar | Career Mentor
+subtitle: Assistant Professor of Physics | Solar Physicist | Career Mentor
 
 profile:
   align: right
@@ -89,7 +89,7 @@ latest_posts:
 </style>
 
 <p class="about-lead">
-Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assistant Professor of Physics with 5+ years of teaching experience and a researcher of the Sun's dynamic processes.
+Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assistant Professor of Physics and a researcher. I have recently taken on the mantle of guiding the next generation to build careers of purpose. I seek to create a true difference by empowering students to look past generic job titles, helping them to discover the real-world impact and daily work that truly fulfills them.
 </p>
 
 <div class="phd-callout">
