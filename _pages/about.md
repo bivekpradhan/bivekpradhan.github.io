@@ -33,18 +33,16 @@ latest_posts:
   .about-columns p { margin: 0 0 1rem; line-height: 1.7; }
   .about-columns > div + div { padding-left: 2rem; border-left: 1px solid var(--global-divider-color); }
 
-  /* Clickable heading link */
+  /* Clickable heading link (underline style, no highlight) */
   .about-columns h3 a.heading-link {
-    display: inline;
     color: var(--global-theme-color);
-    text-decoration: none;
-    background-image: linear-gradient(color-mix(in srgb, var(--global-theme-color) 35%, transparent), color-mix(in srgb, var(--global-theme-color) 35%, transparent));
-    background-repeat: no-repeat;
-    background-position: 0 92%;
-    background-size: 100% 0.5em;
-    padding: 0 0.15em;
-    transition: background-size 0.2s ease, color 0.2s ease;
+    transition: color 0.2s ease;
   }
+  .about-columns h3 a.heading-link i { font-size: 0.7em; margin-left: 0.3em; vertical-align: 0.1em; }
+  .about-columns h3 a.heading-link:hover,
+  .about-columns h3 a.heading-link:focus-visible { color: var(--global-hover-color); }
+  .about-columns h3 a.heading-link:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }
+
   .topic-list { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
   .topic-list li {
     padding: 0.3rem 0.85rem;
@@ -72,10 +70,10 @@ latest_posts:
 Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assistant Professor of Physics and a researcher with a passion for education, mentorship, and career development.
 </p>
 
-<div class="about-lead">
+<div class="about-columns">
   <div>
     <h3><a class="heading-link" href="https://bivekpradhan.github.io/assets/html/solar-corona-explainer.html" target="_blank" rel="noopener">My Research Interest<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
-    <p>My research focuses on understanding the dynamic processes of the Sun through the study of magnetohydrodynamics (MHD), Alfvén waves, compressible plasma turbulence, and the enduring challenge of coronal heating.  I enjoy combining analytical theory, numerical simulations, and computational techniques to explore these fascinating phenomena.</p>
+    <p>My research focuses on understanding the dynamic processes of the Sun through the study of magnetohydrodynamics (MHD), Alfvén waves, compressible plasma turbulence, and the enduring challenge of coronal heating. I enjoy combining analytical theory, numerical simulations, and computational techniques to explore these fascinating phenomena.</p>
     <ul class="topic-list">
       <li>Magnetohydrodynamics</li>
       <li>Alfvén waves</li>
@@ -84,7 +82,6 @@ Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assista
       <li>Physics-informed neural networks</li>
     </ul>
   </div>
-  <div class="about-column">
   <div>
     <h3>Teaching and mentoring</h3>
     <p>I enjoy making physics engaging and accessible, while helping students discover meaningful academic and career opportunities. My aim is to empower them to look beyond generic job titles and understand the real-world impact, possibilities, and everyday work that can make a career truly fulfilling.</p>
