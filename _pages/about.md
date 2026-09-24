@@ -92,17 +92,9 @@ latest_posts:
 Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assistant Professor of Physics and a researcher with a passion for education, mentorship, and career development.
 </p>
 
-<div class="phd-callout">
-  <p class="phd-label">My Ph.D. work</p>
-  <p><a class="phd-link" href="{{ '/publications/' | relative_url }}">The Study of Compressibility of Magnetohydrodynamic Waves in Perspective of Turbulent Heating of Solar Corona</a></p>
-</div>
 
-<ul class="topic-list">
-  <li>Magnetohydrodynamics</li>
-  <li>Alfvén waves</li>
-  <li>Compressible plasma turbulence</li>
-  <li>Coronal heating</li>
-</ul>
+
+
 
 <div class="about-columns">
   <div>
@@ -111,7 +103,7 @@ Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assista
   </div>
   <div>
     <h3>Teaching and mentoring</h3>
-    <p>I enjoy making physics engaging and accessible. I believe every student deserves the right guidance to find meaningful academic and career opportunities in physics and related fields. Thereby, I seek to empower students to look past generic job titles by helping them discover the real-world impact and daily work that truly fulfills them.</p>
+    <p>I enjoy making physics engaging and accessible, while helping students discover meaningful academic and career opportunities. My aim is to empower them to look beyond generic job titles and understand the real-world impact, possibilities, and everyday work that can make a career truly fulfilling.</p>
   </div>
 </div>
 
