@@ -111,7 +111,7 @@ Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assista
   </div>
   <div>
     <h3>Teaching and mentoring</h3>
-    <p>I enjoy making physics engaging and accessible. I believe every student deserves the right guidance to find meaningful academic and career opportunities in physics and related fields.</p>
+    <p>I enjoy making physics engaging and accessible. I believe every student deserves the right guidance to find meaningful academic and career opportunities in physics and related fields. Thereby, I seek to empower students to look past generic job titles by helping them discover the real-world impact and daily work that truly fulfills them.</p>
   </div>
 </div>
 
