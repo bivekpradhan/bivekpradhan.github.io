@@ -101,7 +101,7 @@ Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assista
     <h3>My Research Interest</h3>
     <p>I study the enduring puzzle of coronal heating by combining analytical theory, numerical simulations, and computational techniques.</p>
   </div>
-  </div> <ul class="topic-list"> <li>Magnetohydrodynamics</li> <li>Alfvén waves</li> <li>Compressible plasma turbulence</li> <li>Coronal heating</li> </ul> <div class="about-columns"> <div>
+  </div> <ul class="topic-list"> <li>Magnetohydrodynamics</li> <li>Alfvén waves</li> <li>Compressible plasma turbulence</li> <li>Coronal heating</li><li>Physics Informed Neural-Network</li> </ul> <div class="about-columns"> <div>
   <div>
     <h3>Teaching and mentoring</h3>
     <p>I enjoy making physics engaging and accessible, while helping students discover meaningful academic and career opportunities. My aim is to empower them to look beyond generic job titles and understand the real-world impact, possibilities, and everyday work that can make a career truly fulfilling.</p>
