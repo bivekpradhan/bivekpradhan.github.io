@@ -84,6 +84,7 @@ Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assista
       <li>Physics-informed neural networks</li>
     </ul>
   </div>
+  <div class="about-column">
   <div>
     <h3>Teaching and mentoring</h3>
     <p>I enjoy making physics engaging and accessible, while helping students discover meaningful academic and career opportunities. My aim is to empower them to look beyond generic job titles and understand the real-world impact, possibilities, and everyday work that can make a career truly fulfilling.</p>
