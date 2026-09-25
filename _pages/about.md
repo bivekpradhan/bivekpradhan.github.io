@@ -58,10 +58,11 @@ latest_posts:
     padding: 1.4rem 1.6rem 1.4rem 3.4rem;
     border-radius: 12px;
     line-height: 1.7;
-    color: var(--global-bg-color);
-    background: linear-gradient(135deg, var(--global-theme-color), color-mix(in srgb, var(--global-theme-color) 70%, black));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--global-theme-color) 60%, white), color-mix(in srgb, var(--global-theme-color) 80%, black));
     box-shadow: 0 6px 18px color-mix(in srgb, var(--global-theme-color) 35%, transparent);
   }
+  .about-invite,
+  .about-invite p { color: #ffffff !important; }
   .about-invite::before {
     content: "\f0e0"; /* envelope icon, Font Awesome */
     font-family: "Font Awesome 5 Free", "Font Awesome 6 Free", sans-serif;
@@ -70,6 +71,7 @@ latest_posts:
     left: 1.3rem;
     top: 1.5rem;
     font-size: 1.1rem;
+    color: #ffffff;
     opacity: 0.85;
   }
   .about-invite p { margin: 0; }
