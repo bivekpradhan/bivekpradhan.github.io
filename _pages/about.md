@@ -73,7 +73,8 @@ Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assista
 <div class="about-columns">
   <div>
     <h3><a class="heading-link" href="https://bivekpradhan.github.io/assets/html/solar-corona-explainer.html" target="_blank" rel="noopener">My Research Interest<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
-    <p>My research focuses on understanding the dynamic processes of the Sun through the study of magnetohydrodynamics (MHD), Alfvén waves, compressible plasma turbulence, and the enduring challenge of coronal heating. I enjoy combining analytical theory, numerical simulations, and computational techniques to explore these fascinating phenomena.</p>
+    <p style="text-align: justify;">
+      My research focuses on understanding the dynamic processes of the Sun through the study of magnetohydrodynamics (MHD), Alfvén waves, compressible plasma turbulence, and the enduring challenge of coronal heating. I enjoy combining analytical theory, numerical simulations, and computational techniques to explore these fascinating phenomena.</p>
     <ul class="topic-list">
       <li>Magnetohydrodynamics</li>
       <li>Alfvén waves</li>
@@ -84,10 +85,13 @@ Hello, and welcome to my website. I'm <strong>Bivek Pradhan</strong>, an Assista
   </div>
   <div>
     <h3>Teaching and mentoring</h3>
-    <p>I enjoy making physics engaging and accessible, while helping students discover meaningful academic and career opportunities. My aim is to empower them to look beyond generic job titles and understand the real-world impact, possibilities, and everyday work that can make a career truly fulfilling.</p>
+    <p style="text-align: justify;">
+      I enjoy making physics engaging and accessible, while helping students discover meaningful academic and career opportunities. My aim is to empower them to look beyond generic job titles and understand the real-world impact, possibilities, and everyday work that can make a career truly fulfilling.</p>
   </div>
 </div>
 
 <div class="about-invite">
+  <p style="text-align: justify;">
 Whether you're a student, fellow researcher, educator, or simply curious about physics, I hope you find something here that sparks your curiosity. To discuss research, exchange ideas, seek academic guidance, or collaborate, feel free to get in touch.
+    </p>
 </div>
