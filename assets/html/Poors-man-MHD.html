@@ -1,200 +1,305 @@
-<!-- Poor Man's MHD – interactive lesson. Paste into a Custom HTML block. Everything is scoped to #pmmhd. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poor Man's MHD | Learn with me</title>
+<meta name="description" content="An interactive beginner-friendly lesson on Poor Man's Magnetohydrodynamics: Elsässer variables, Fourier modes, truncation and chaos.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <style>
-#pmmhd{--bg:#0b1020;--card:#131a30;--line:#26304f;--tx:#e8ecf8;--mu:#97a3c4;--a:#8b7bff;--b:#36d6c8;--c:#ff7ab6;
-font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--tx);border-radius:20px;padding:clamp(16px,4vw,36px);line-height:1.65;max-width:900px;margin:auto;box-sizing:border-box}
-#pmmhd *{box-sizing:border-box}
-#pmmhd h2{font-size:clamp(1.6rem,4.5vw,2.4rem);line-height:1.15;margin:0 0 6px;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
-#pmmhd h3{margin:0 0 8px;font-size:1.25rem}
-#pmmhd p{margin:.5em 0;color:#cfd6ec}
-#pmmhd .sub{color:var(--mu);margin:0 0 18px}
-#pmmhd .tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px}
-#pmmhd button{font:inherit;cursor:pointer;color:var(--tx)}
-#pmmhd .tabs button{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap;color:var(--mu)}
-#pmmhd .tabs button.on{background:linear-gradient(90deg,var(--a),var(--b));color:#06101c;border-color:transparent;font-weight:600}
-#pmmhd .tabs button.done::after{content:" ✓"}
-#pmmhd .bar{height:4px;background:var(--line);border-radius:4px;margin-bottom:18px;overflow:hidden}
-#pmmhd .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b));transition:width .4s}
-#pmmhd section{display:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:clamp(14px,3vw,24px)}
-#pmmhd section.on{display:block}
-#pmmhd .eq{overflow-x:auto;padding:6px 0;text-align:center}
-#pmmhd .note{border-left:3px solid var(--b);background:#0f2a33;padding:8px 12px;border-radius:0 10px 10px 0;margin:12px 0;color:#cdeff0}
-#pmmhd .warn{border-left-color:var(--c);background:#2d1626;color:#ffd3e6}
-#pmmhd .chain{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-#pmmhd .chain button{background:#0e1428;border:1px solid var(--line);border-radius:12px;padding:8px 12px}
-#pmmhd .chain button.on{border-color:var(--a);box-shadow:0 0 0 2px #8b7bff44}
-#pmmhd .box{background:#0e1428;border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:80px}
-#pmmhd .ctl{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;margin:8px 0}
-#pmmhd input[type=range]{width:100%;accent-color:var(--a)}
-#pmmhd .btn{background:var(--a);border:0;border-radius:10px;padding:8px 14px;color:#fff;font-weight:600}
-#pmmhd .btn.alt{background:#222c4d}
-#pmmhd .row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
-#pmmhd canvas{width:100%;background:#0e1428;border:1px solid var(--line);border-radius:12px;display:block}
-#pmmhd .meter{height:14px;background:#0e1428;border-radius:8px;overflow:hidden;margin:4px 0 10px;border:1px solid var(--line)}
-#pmmhd .meter i{display:block;height:100%;transition:width .2s}
-#pmmhd .opt{display:block;width:100%;text-align:left;background:#0e1428;border:1px solid var(--line);border-radius:10px;padding:9px 12px;margin:6px 0}
-#pmmhd .opt.ok{border-color:#3ddc97;background:#10301f}#pmmhd .opt.no{border-color:var(--c);background:#331626}
-#pmmhd textarea{width:100%;min-height:130px;background:#0e1428;color:var(--tx);border:1px solid var(--line);border-radius:12px;padding:10px;font:inherit}
-#pmmhd button:focus-visible,#pmmhd textarea:focus-visible,#pmmhd input:focus-visible{outline:2px solid var(--b);outline-offset:2px}
-#pmmhd .tag{display:inline-block;padding:2px 10px;border-radius:999px;margin:3px 4px 3px 0;font-size:.9rem}
-#pmmhd .g{background:#10301f;color:#8df0be}#pmmhd .m{background:#331626;color:#ffb0d0}
-#pmmhd .mono{font-variant-numeric:tabular-nums;color:var(--b)}
+:root{--ink:#172033;--muted:#5f6b7a;--line:#d9dee7;--panel:#f7f9fc;--accent:#3857d6;--accent-light:#eef1ff;--warm:#c96b32;--success:#347b57;--success-bg:#edf8f2;--danger:#a94e4e;--danger-bg:#fff1f1;--max-width:1000px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:#fff;line-height:1.6;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.research-page{width:min(100% - 32px,var(--max-width));margin:30px auto 80px}
+.backlink{font-size:14px;margin-bottom:6px}
+.backlink a{color:var(--accent);text-decoration:none;font-weight:650}
+.hero{padding:20px 0 30px}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.hero h1{margin:10px 0 15px;font-size:clamp(32px,6vw,55px);line-height:1.05;letter-spacing:-.04em;font-weight:800}
+.hero p{max-width:800px;font-size:18px;color:var(--muted)}
+.hero-question{margin-top:25px;padding:18px 20px;background:var(--accent-light);border-left:5px solid var(--accent);border-radius:10px;font-size:17px}
+.lesson-nav{display:flex;gap:8px;overflow-x:auto;padding:8px 0 15px;scrollbar-width:thin}
+.lesson-nav button{flex:0 0 auto;padding:10px 15px;min-height:44px;border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;font-weight:650}
+.lesson-nav button:hover{border-color:var(--accent)}
+.lesson-nav button.active{color:var(--accent);background:var(--accent-light);border-color:#b9c4ff}
+.lesson-nav button.done::after{content:" ✓";color:var(--success)}
+.progress-container{width:100%;height:7px;background:#e7eaf0;border-radius:20px;overflow:hidden;margin-bottom:25px}
+.progress-bar{height:100%;width:16.6%;background:var(--accent);transition:width .3s ease}
+.lesson-section{display:none;animation:fadeIn .25s ease}
+.lesson-section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.card{padding:25px;margin-bottom:18px;background:var(--panel);border:1px solid var(--line);border-radius:18px}
+.card h2{margin-top:0;font-size:25px;line-height:1.2}
+.card p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.mini-card{padding:18px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.mini-card strong{display:block;margin-bottom:5px}
+.mini-card span{color:var(--muted);font-size:14px}
+.research-note{margin-top:18px;padding:15px 17px;background:var(--accent-light);border-left:4px solid var(--accent);border-radius:8px}
+.research-note.warn{background:#fff4ea;border-left-color:var(--warm)}
+.flow{display:flex;align-items:center;gap:9px;overflow-x:auto;padding:10px 2px 15px}
+.flow-node{min-width:120px;padding:15px 10px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:14px;color:var(--ink)}
+button.flow-node:hover{border-color:var(--accent)}
+button.flow-node.on{border-color:var(--accent);background:var(--accent-light);font-weight:700}
+.flow-arrow{font-size:23px;color:var(--muted)}
+.controls{display:grid;gap:12px;margin:12px 0}
+.controls label{font-weight:700;font-size:14px}
+.controls input[type=range]{width:100%;accent-color:var(--accent)}
+.value{color:var(--accent);font-variant-numeric:tabular-nums}
+.result{min-height:48px;padding:13px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.meter{height:12px;background:#e7eaf0;border-radius:8px;overflow:hidden;margin:4px 0 12px}
+.meter i{display:block;height:100%;background:var(--warm);transition:width .2s}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.btn{min-height:44px;padding:10px 15px;border:1px solid var(--line);background:#fff;border-radius:10px;font-weight:650}
+.btn:hover{border-color:var(--accent)}
+.btn-primary{color:#fff;background:var(--accent);border-color:var(--accent)}
+.equation{margin:18px 0;padding:14px;background:#fff;border:1px solid var(--line);border-radius:10px;text-align:center;overflow-x:auto}
+canvas{width:100%;height:auto;display:block;margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.quiz-question{font-size:18px;font-weight:750;margin:18px 0 8px}
+.quiz-answer{display:block;width:100%;padding:13px;margin:7px 0;text-align:left;background:#fff;border:1px solid var(--line);border-radius:10px;color:var(--ink)}
+.quiz-answer:hover{border-color:var(--accent)}
+.quiz-answer.correct{background:var(--success-bg);border-color:var(--success);color:var(--success)}
+.quiz-answer.wrong{background:var(--danger-bg);border-color:var(--danger);color:var(--danger)}
+.quiz-feedback{margin-top:8px;padding:12px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:14px}
+textarea{width:100%;min-height:130px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.tag{display:inline-block;padding:3px 11px;border-radius:999px;margin:3px 4px 3px 0;font-size:14px}
+.tag.g{background:var(--success-bg);color:var(--success)}
+.tag.m{background:var(--danger-bg);color:var(--danger)}
+.small{font-size:13px;color:var(--muted)}
+.research-footer{margin-top:45px;padding-top:20px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:13px}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:650px){.research-page{width:min(100% - 22px,var(--max-width));margin-top:20px}.hero h1{font-size:34px}.hero p{font-size:16px}.card{padding:18px}.grid{grid-template-columns:1fr}.flow-node{min-width:105px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 </style>
+</head>
+<body>
+<main class="research-page">
+<div class="backlink"><a href="/learn/">← Back to Learn with me</a></div>
 
-<div id="pmmhd">
-  <h2>Poor Man's Magnetohydrodynamics</h2>
-  <p class="sub">How a whole plasma can be squeezed into six numbers and still behave like MHD. Learn it in six short steps, then teach it back.</p>
-  <div class="tabs" id="tabs"></div>
-  <div class="bar"><i id="prog"></i></div>
+<header class="hero">
+  <div class="eyebrow">Interactive Lesson · Fluid Dynamics</div>
+  <h1>Poor Man's Magnetohydrodynamics</h1>
+  <p>How a whole plasma can be squeezed into <strong>six coupled numbers</strong> and still behave like MHD. Learn it in six short steps, then teach it back.</p>
+  <div class="hero-question"><strong>The big question:</strong> What is the minimum mathematical machinery that still keeps the nonlinear MHD interaction alive?</div>
+</header>
 
-  <!-- 1 -->
-  <section>
-    <h3>1. The big idea</h3>
-    <p>Full MHD tracks the velocity <b>U</b>(x,t) and magnetic field <b>B</b>(x,t) at every point of space: infinitely many degrees of freedom. Poor man's MHD (PMMHD) asks a sharper question:</p>
-    <div class="note">What is the <b>minimum</b> mathematical machinery that still keeps the nonlinear MHD interaction alive?</div>
-    <p>"Poor man's" means <i>extremely reduced</i>, not physically bad. It is not "MHD at lower resolution". Click each step of the chain:</p>
-    <div class="chain" id="chain"></div>
-    <div class="box" id="chainBox"></div>
-  </section>
+<nav class="lesson-nav" id="tabs"></nav>
+<div class="progress-container"><div class="progress-bar" id="prog"></div></div>
 
-  <!-- 2 -->
-  <section>
-    <h3>2. Elsässer variables</h3>
+<!-- 1 -->
+<section class="lesson-section active">
+  <div class="card">
+    <h2>1. The Big Idea</h2>
+    <p>Full MHD tracks the velocity <strong>U</strong>(x,t) and magnetic field <strong>B</strong>(x,t) at every point of space: infinitely many degrees of freedom. Poor man's MHD (PMMHD) is an <strong>extremely reduced</strong> model, not a physically bad one, and not "MHD at lower resolution".</p>
+    <p>Click each step of the reduction chain:</p>
+    <div class="flow" id="chain"></div>
+    <div class="result" id="chainBox"></div>
+  </div>
+  <div class="grid">
+    <div class="mini-card"><strong>Keeps</strong><span>The nonlinear coupling between velocity and magnetic fluctuations.</span></div>
+    <div class="mini-card"><strong>Drops</strong><span>Most of space: only a few Fourier modes survive.</span></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="lesson-section">
+  <div class="card">
+    <h2>2. Elsässer Variables</h2>
     <p>With the magnetic field in velocity units, \(\mathbf b=\mathbf B/\sqrt{4\pi\rho_0}\), define</p>
-    <div class="eq">$$\mathbf Z^{\pm}=\mathbf U\pm\mathbf b,\qquad \mathbf U=\frac{\mathbf Z^{+}+\mathbf Z^{-}}{2},\quad \mathbf b=\frac{\mathbf Z^{+}-\mathbf Z^{-}}{2}$$</div>
-    <p>The nonlinear term in the incompressible MHD equations becomes</p>
-    <div class="eq">$$\partial_t\mathbf Z^{\pm}+(\mathbf Z^{\mp}\!\cdot\nabla)\,\mathbf Z^{\pm}=-\nabla P_{\rm tot}+\nu^{\pm}\nabla^2\mathbf Z^{\pm}$$</div>
-    <p>So \(\mathbf Z^{+}\) is only advected by \(\mathbf Z^{-}\), and vice versa. <b>Try it</b> (one component along a line):</p>
-    <div class="ctl"><span>U</span><input type="range" id="U" min="-2" max="2" step="0.1" value="1"><span class="mono" id="Uv"></span></div>
-    <div class="ctl"><span>b</span><input type="range" id="b" min="-2" max="2" step="0.1" value="1"><span class="mono" id="bv"></span></div>
-    <div class="row"><button class="btn alt" id="pU">U = b</button><button class="btn alt" id="pM">U = −b</button><button class="btn alt" id="pG">generic</button></div>
-    <p>Z⁺ = <span class="mono" id="zp"></span> &nbsp; Z⁻ = <span class="mono" id="zm"></span></p>
-    <p>Nonlinear coupling strength |Z⁺||Z⁻|</p>
-    <div class="meter"><i id="cpl" style="background:linear-gradient(90deg,#8b7bff,#ff7ab6)"></i></div>
-    <div class="note" id="elsMsg"></div>
-  </section>
+    <div class="equation">$$\mathbf Z^{\pm}=\mathbf U\pm\mathbf b,\qquad \mathbf U=\frac{\mathbf Z^{+}+\mathbf Z^{-}}{2},\quad \mathbf b=\frac{\mathbf Z^{+}-\mathbf Z^{-}}{2}$$</div>
+    <p>The nonlinear term in incompressible MHD becomes</p>
+    <div class="equation">$$\partial_t\mathbf Z^{\pm}+(\mathbf Z^{\mp}\!\cdot\nabla)\,\mathbf Z^{\pm}=-\nabla P_{\rm tot}+\nu^{\pm}\nabla^2\mathbf Z^{\pm}$$</div>
+    <p>So \(\mathbf Z^{+}\) is only advected by \(\mathbf Z^{-}\), and vice versa. Try it (one component along a line):</p>
+    <div class="controls">
+      <label for="U">U: <span class="value" id="Uv"></span></label><input type="range" id="U" min="-2" max="2" step="0.1" value="1">
+      <label for="b">b: <span class="value" id="bv"></span></label><input type="range" id="b" min="-2" max="2" step="0.1" value="1">
+    </div>
+    <div class="actions"><button class="btn" id="pU">U = b</button><button class="btn" id="pM">U = −b</button><button class="btn" id="pG">generic</button></div>
+    <p>Z⁺ = <strong class="value" id="zp"></strong> &nbsp; Z⁻ = <strong class="value" id="zm"></strong> &nbsp; Nonlinear coupling strength |Z⁺||Z⁻|:</p>
+    <div class="meter"><i id="cpl"></i></div>
+    <div class="result" id="elsMsg"></div>
+  </div>
+</section>
 
-  <!-- 3 -->
-  <section>
-    <h3>3. Fourier modes and mode coupling</h3>
+<!-- 3 -->
+<section class="lesson-section">
+  <div class="card">
+    <h2>3. Fourier Modes and Mode Coupling</h2>
     <p>Fourier expansion does not remove space; it writes structure as modes:</p>
-    <div class="eq">$$\mathbf Z^{\pm}(\mathbf x,t)=\sum_{\mathbf k}\mathbf Z^{\pm}_{\mathbf k}(t)\,e^{i\mathbf k\cdot\mathbf x}$$</div>
-    <p>Take a field with two modes, \(Z=A_1\cos kx+A_2\cos 2kx\). Multiply it by itself, as the nonlinear term does, and watch new modes appear.</p>
-    <div class="ctl"><span>A₁</span><input type="range" id="A1" min="0" max="1" step="0.05" value="0.8"><span class="mono" id="A1v"></span></div>
-    <div class="ctl"><span>A₂</span><input type="range" id="A2" min="0" max="1" step="0.05" value="0.5"><span class="mono" id="A2v"></span></div>
-    <canvas id="cv3" width="800" height="300"></canvas>
-    <p>Violet: field Z(x) and its spectrum. Pink: Z² and its spectrum. A product in physical space is a coupling of modes:</p>
-    <div class="eq">$$k_1+k_2\to k_3$$</div>
-    <div class="note warn">Nonlinear interaction is not automatically turbulence. A nonlinear system can be periodic, chaotic or turbulent; turbulence needs many interacting modes.</div>
-  </section>
+    <div class="equation">$$\mathbf Z^{\pm}(\mathbf x,t)=\sum_{\mathbf k}\mathbf Z^{\pm}_{\mathbf k}(t)\,e^{i\mathbf k\cdot\mathbf x}$$</div>
+    <p>Take \(Z=A_1\cos kx+A_2\cos 2kx\). Multiply it by itself, as the nonlinear term does, and watch new modes appear.</p>
+    <div class="controls">
+      <label for="A1">A₁: <span class="value" id="A1v"></span></label><input type="range" id="A1" min="0" max="1" step="0.05" value="0.8">
+      <label for="A2">A₂: <span class="value" id="A2v"></span></label><input type="range" id="A2" min="0" max="1" step="0.05" value="0.5">
+    </div>
+    <canvas id="cv3" width="800" height="300" role="img" aria-label="Field Z, its square, and their Fourier spectra"></canvas>
+    <p class="small">Blue: field Z(x) and its spectrum. Orange: Z² and its spectrum.</p>
+    <p>A product in physical space is a coupling of modes:</p>
+    <div class="equation">$$k_1+k_2\to k_3$$</div>
+    <div class="research-note warn"><strong>Careful:</strong> nonlinear interaction is not automatically turbulence. A nonlinear system can be periodic, chaotic or turbulent; turbulence needs many interacting modes.</div>
+  </div>
+</section>
 
-  <!-- 4 -->
-  <section>
-    <h3>4. Galerkin truncation: why six variables?</h3>
+<!-- 4 -->
+<section class="lesson-section">
+  <div class="card">
+    <h2>4. Galerkin Truncation: Why Six Variables?</h2>
     <p>PMMHD keeps only one fixed wavevector. Each Elsässer field has three components:</p>
-    <div class="eq">$$\mathbf X=(Z_1^{+},Z_2^{+},Z_3^{+},Z_1^{-},Z_2^{-},Z_3^{-})\in\mathbb R^{6}$$</div>
-    <p>Then the PDE becomes a discrete map, and schematically</p>
-    <div class="eq">$$\mathbf X_{n+1}=F(\mathbf X_n):\quad Z^{\pm}_{i,n+1}=\underbrace{\text{linear damping / diffusion}}_{\alpha,\ \beta}+\underbrace{\textstyle\sum_j\Gamma_i^{\,j}\,Z^{\pm}_{i}Z^{\mp}_{j}}_{\text{MHD coupling}}$$</div>
-    <div class="note warn">The six numbers are <b>not independent</b>. They are six strongly coupled amplitudes, like six balls joined by springs, not six free balls.</div>
+    <div class="equation">$$\mathbf X=(Z_1^{+},Z_2^{+},Z_3^{+},Z_1^{-},Z_2^{-},Z_3^{-})\in\mathbb R^{6}$$</div>
+    <p>The PDE then becomes a discrete map. Schematically:</p>
+    <div class="equation">$$\mathbf X_{n+1}=F(\mathbf X_n):\quad Z^{\pm}_{i,n+1}=\underbrace{\text{linear damping / diffusion}}_{\alpha,\ \beta}+\underbrace{\textstyle\sum_j\Gamma_i^{\,j}\,Z^{\pm}_{i}Z^{\mp}_{j}}_{\text{MHD coupling}}$$</div>
+    <div class="research-note warn"><strong>Important:</strong> the six numbers are <b>not independent</b>. They are six strongly coupled amplitudes, like six balls joined by springs, not six free balls.</div>
     <p>Here \(\alpha\) is the magnetic-diffusive part, \(\beta\) the viscous part (both set by the Reynolds numbers \(R_e,R_m\)), and \(\Gamma\) encodes the coupling geometry. In the ideal limit the model keeps the MHD invariants (energy and cross-helicity).</p>
-  </section>
+  </div>
+</section>
 
-  <!-- 5 -->
-  <section>
-    <h3>5. Nonlinearity makes chaos</h3>
+<!-- 5 -->
+<section class="lesson-section">
+  <div class="card">
+    <h2>5. Nonlinearity Makes Chaos</h2>
     <p>Set the magnetic field to zero, \(\mathbf b=0\). Then \(Z^+=Z^-=U\) and the model collapses to a logistic-type map (sign convention of Γ aside):</p>
-    <div class="eq">$$u_{n+1}=\beta\,u_n-\Gamma\,u_n^{2}$$</div>
+    <div class="equation">$$u_{n+1}=\beta\,u_n-\Gamma\,u_n^{2}$$</div>
     <p>This is a teaching version of that limit, rescaled so Γ is absorbed. Drag β and watch a stable state turn into oscillations, period doubling, then chaos.</p>
-    <div class="ctl"><span>β</span><input type="range" id="beta" min="2.4" max="4" step="0.005" value="2.8"><span class="mono" id="betav"></span></div>
-    <div class="row"><button class="btn" id="nl">Nonlinear term: ON</button></div>
-    <canvas id="cv5" width="800" height="300"></canvas>
-    <div class="box" id="traj" style="margin-top:10px"></div>
-  </section>
+    <div class="controls"><label for="beta">β: <span class="value" id="betav"></span></label><input type="range" id="beta" min="2.4" max="4" step="0.005" value="2.8"></div>
+    <div class="actions"><button class="btn btn-primary" id="nl">Nonlinear term: ON</button></div>
+    <canvas id="cv5" width="800" height="300" role="img" aria-label="Bifurcation diagram of the logistic-type map"></canvas>
+    <div class="result" id="traj" style="margin-top:12px"></div>
+  </div>
+</section>
 
-  <!-- 6 -->
-  <section>
-    <h3>6. Check yourself, then teach it back</h3>
+<!-- 6 -->
+<section class="lesson-section">
+  <div class="card">
+    <h2>6. Test Your Understanding</h2>
+    <p class="small">Five questions, then teach the idea back in your own words.</p>
     <div id="quiz"></div>
-    <p style="margin-top:16px"><b>Teach it back in 2 minutes.</b> Explain PMMHD to a B.Sc. student in your own words.</p>
+  </div>
+  <div class="card">
+    <h2>Teach It Back in Two Minutes</h2>
+    <p>Explain PMMHD to a B.Sc. student.</p>
     <textarea id="tb" placeholder="Start from full MHD, mention Elsässer variables, Fourier modes, truncation, coupling and the map..."></textarea>
-    <div class="row"><button class="btn" id="chk">Check my explanation</button></div>
+    <div class="actions"><button class="btn btn-primary" id="chk">Check my explanation</button></div>
     <div id="fb"></div>
-  </section>
-</div>
+  </div>
+</section>
+
+<footer class="research-footer">Interactive lesson · Poor Man's Magnetohydrodynamics · Learn with me</footer>
+</main>
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 <script>
-(function(){
-var R=document.getElementById('pmmhd'),$=function(i){return R.querySelector('#'+i)};
-var names=['Big idea','Elsässer','Fourier','Six variables','Chaos','Quiz'],secs=R.querySelectorAll('section'),seen={};
-function math(el){if(window.renderMathInElement)renderMathInElement(el||R,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false})}
-function show(i){secs.forEach(function(s,j){s.classList.toggle('on',i==j)});seen[i]=1;
- [].forEach.call($('tabs').children,function(t,j){t.classList.toggle('on',i==j);t.classList.toggle('done',seen[j]&&i!=j)});
- $('prog').style.width=(Object.keys(seen).length/6*100)+'%';draw3();draw5();math(secs[i])}
-names.forEach(function(n,i){var b=document.createElement('button');b.textContent=(i+1)+'. '+n;b.onclick=function(){show(i)};$('tabs').appendChild(b)});
+document.addEventListener("DOMContentLoaded",function(){
+var $=function(i){return document.getElementById(i)},secs=document.querySelectorAll(".lesson-section"),names=["The Big Idea","Elsässer","Fourier Modes","Six Variables","Chaos","Test Yourself"],seen={};
+function math(el){if(window.renderMathInElement)renderMathInElement(el||document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false})}
+function show(i){secs.forEach(function(s,j){s.classList.toggle("active",i==j)});seen[i]=1;
+ [].forEach.call($("tabs").children,function(t,j){t.classList.toggle("active",i==j);t.classList.toggle("done",!!seen[j]&&i!=j)});
+ $("prog").style.width=((i+1)/secs.length*100)+"%";draw3();draw5();math(secs[i]);window.scrollTo({top:0,behavior:"smooth"})}
+names.forEach(function(n,i){var b=document.createElement("button");b.textContent=(i+1)+". "+n;b.onclick=function(){show(i)};$("tabs").appendChild(b)});
 
-/* 1 chain */
-var ch=[['Plasma physics','A conducting fluid coupled to magnetic fields: U and B interact (Alfvén waves, tension, reconnection).'],
-['MHD PDEs','Incompressible MHD: \\(\\nabla\\!\\cdot\\mathbf U=0,\\ \\nabla\\!\\cdot\\mathbf b=0\\), with messy nonlinear terms \\((\\mathbf U\\!\\cdot\\nabla)\\mathbf U-(\\mathbf b\\!\\cdot\\nabla)\\mathbf b\\).'],
-['Fourier modes','Write fields as \\(\\sum_k Z_k(t)e^{ik\\cdot x}\\). Derivatives become algebraic factors \\(ik\\); products become mode coupling.'],
-['Truncate','Galerkin truncation: keep a tiny set of modes, \\(\\sum_k\\to\\sum_{k\\in K_{\\rm retained}}\\), but keep the nonlinear coupling.'],
-['6-D map','State \\(\\mathbf X_n\\in\\mathbb R^6\\) evolves by \\(\\mathbf X_{n+1}=F(\\mathbf X_n)\\): damping + MHD coupling, a Lorenz-like low-dimensional system.']];
-ch.forEach(function(c,i){var b=document.createElement('button');b.textContent=c[0];b.onclick=function(){
- [].forEach.call($('chain').children,function(x,j){x.classList.toggle('on',i==j)});$('chainBox').innerHTML='<b>'+c[0]+'</b><p>'+c[1]+'</p>';math($('chainBox'))};$('chain').appendChild(b)});
-$('chain').children[0].click();
+/* 1: chain */
+var ch=[["Plasma physics","A conducting fluid coupled to magnetic fields: U and B interact (Alfvén waves, magnetic tension, reconnection)."],
+["MHD PDEs","Incompressible MHD: \\(\\nabla\\!\\cdot\\mathbf U=0,\\ \\nabla\\!\\cdot\\mathbf b=0\\), with nonlinear terms \\((\\mathbf U\\!\\cdot\\nabla)\\mathbf U-(\\mathbf b\\!\\cdot\\nabla)\\mathbf b\\)."],
+["Fourier modes","Write fields as \\(\\sum_k Z_k(t)e^{ik\\cdot x}\\). Derivatives become algebraic factors \\(ik\\); products become mode coupling."],
+["Truncate","Galerkin truncation: keep a tiny set of modes, \\(\\sum_k\\to\\sum_{k\\in K_{\\rm retained}}\\), but keep the nonlinear coupling."],
+["6-D map","State \\(\\mathbf X_n\\in\\mathbb R^6\\) evolves by \\(\\mathbf X_{n+1}=F(\\mathbf X_n)\\): damping plus MHD coupling, a Lorenz-like low-dimensional system."]];
+ch.forEach(function(c,i){if(i){var a=document.createElement("div");a.className="flow-arrow";a.textContent="→";$("chain").appendChild(a)}
+ var b=document.createElement("button");b.className="flow-node";b.textContent=c[0];b.onclick=function(){
+ [].forEach.call($("chain").querySelectorAll("button"),function(x,j){x.classList.toggle("on",i==j)});$("chainBox").innerHTML="<strong>"+c[0]+"</strong><br>"+c[1];math($("chainBox"))};$("chain").appendChild(b)});
+$("chain").querySelector("button").click();
 
-/* 2 Elsasser */
-function els(){var U=+$('U').value,b=+$('b').value,p=U+b,m=U-b;$('Uv').textContent=U.toFixed(1);$('bv').textContent=b.toFixed(1);
- $('zp').textContent=p.toFixed(1);$('zm').textContent=m.toFixed(1);var c=Math.abs(p*m);$('cpl').style.width=Math.min(100,c/4*100)+'%';
- $('elsMsg').innerHTML=Math.abs(m)<1e-9&&Math.abs(p)>1e-9?'Z⁻ = 0 and Z⁺ ≠ 0: a one-directional Alfvénic state. The wave exists, but its counter-propagating partner is absent, so the nonlinear term vanishes.':
- Math.abs(p)<1e-9&&Math.abs(m)>1e-9?'Z⁺ = 0 and Z⁻ ≠ 0: again Alfvénic. <b>One</b> Elsässer field vanishes, not both.':
- Math.abs(p)<1e-9?'Both zero: no fluctuations at all.':'Both Z⁺ and Z⁻ are present, so they interact nonlinearly.'}
-['U','b'].forEach(function(i){$(i).oninput=els});
-$('pU').onclick=function(){$('U').value=1;$('b').value=1;els()};$('pM').onclick=function(){$('U').value=1;$('b').value=-1;els()};$('pG').onclick=function(){$('U').value=1.5;$('b').value=0.4;els()};els();
+/* 2: Elsasser */
+function els(){var U=+$("U").value,b=+$("b").value,p=U+b,m=U-b;$("Uv").textContent=U.toFixed(1);$("bv").textContent=b.toFixed(1);
+ $("zp").textContent=p.toFixed(1);$("zm").textContent=m.toFixed(1);$("cpl").style.width=Math.min(100,Math.abs(p*m)/4*100)+"%";
+ var P=Math.abs(p)<1e-9,M=Math.abs(m)<1e-9;
+ $("elsMsg").innerHTML=P&&M?"Both zero: no fluctuations at all.":M?"Z⁻ = 0 and Z⁺ ≠ 0: a one-directional Alfvénic state. The wave exists, but its counter-propagating partner is absent, so the nonlinear term vanishes.":P?"Z⁺ = 0 and Z⁻ ≠ 0: again Alfvénic. <strong>One</strong> Elsässer field vanishes, not both.":"Both Z⁺ and Z⁻ are present, so they interact nonlinearly."}
+["U","b"].forEach(function(i){$(i).oninput=els});
+$("pU").onclick=function(){$("U").value=1;$("b").value=1;els()};$("pM").onclick=function(){$("U").value=1;$("b").value=-1;els()};$("pG").onclick=function(){$("U").value=1.5;$("b").value=0.4;els()};els();
 
-/* 3 modes */
-function draw3(){var A1=+$('A1').value,A2=+$('A2').value,cv=$('cv3'),g=cv.getContext('2d'),W=cv.width,H=cv.height;$('A1v').textContent=A1.toFixed(2);$('A2v').textContent=A2.toFixed(2);
- g.clearRect(0,0,W,H);g.strokeStyle='#26304f';g.beginPath();g.moveTo(0,90);g.lineTo(W,90);g.stroke();
- [['#8b7bff',function(x){return A1*Math.cos(x)+A2*Math.cos(2*x)}],['#ff7ab6',function(x){var z=A1*Math.cos(x)+A2*Math.cos(2*x);return z*z}]].forEach(function(f){
-  g.strokeStyle=f[0];g.lineWidth=2;g.beginPath();for(var i=0;i<=W;i+=4){var y=90-f[1](i/W*4*Math.PI)*55;i?g.lineTo(i,y):g.moveTo(i,y)}g.stroke()});
- var Z=[0,A1,A2,0,0],Z2=[(A1*A1+A2*A2)/2,A1*A2,A1*A1/2,A1*A2,A2*A2/2];g.font='13px sans-serif';
- for(var k=0;k<5;k++){var x=40+k*150;[[Z[k],'#8b7bff',0],[Z2[k],'#ff7ab6',34]].forEach(function(d){var h=d[0]*110;g.fillStyle=d[1];g.fillRect(x+d[2],290-h,30,h)});
-  g.fillStyle='#97a3c4';g.fillText(k?(k==1?'k':k+'k'):'0',x+26,299)}}
-['A1','A2'].forEach(function(i){$(i).oninput=draw3});
+/* 3: modes */
+function draw3(){
+ var A1=+$("A1").value,A2=+$("A2").value;
+ $("A1v").textContent=A1.toFixed(2);$("A2v").textContent=A2.toFixed(2);
+ var cv=$("cv3"),W=cv.clientWidth||800,H=460,d=window.devicePixelRatio||1;
+ cv.width=W*d;cv.height=H*d;cv.style.height=H+"px";
+ var g=cv.getContext("2d");g.setTransform(d,0,0,d,0,0);g.clearRect(0,0,W,H);
+ var BLUE="#3857d6",ORG="#c96b32",GREY="#5f6b7a",LINE="#d9dee7";
+ var F=function(x){return A1*Math.cos(x)+A2*Math.cos(2*x)};
 
-/* 5 map */
-var nl=true;
-function f(x,r){return r*x*(1-x)}
-function draw5(){var r=+$('beta').value,cv=$('cv5'),g=cv.getContext('2d'),W=cv.width,H=cv.height;$('betav').textContent=r.toFixed(3);g.clearRect(0,0,W,H);
- if(nl){g.fillStyle='rgba(139,123,255,.55)';for(var px=0;px<W;px+=1){var q=2.4+px/W*1.6,x=0.5;for(var i=0;i<250;i++)x=f(x,q);for(i=0;i<60;i++){x=f(x,q);g.fillRect(px,H-x*H*0.95-6,1.4,1.4)}}}
- var lx=(r-2.4)/1.6*W;g.strokeStyle='#36d6c8';g.lineWidth=2;g.beginPath();g.moveTo(lx,0);g.lineTo(lx,H);g.stroke();
- var x=0.3,s=[];if(nl){for(var i=0;i<400;i++)x=f(x,r);for(i=0;i<8;i++){x=f(x,r);s.push(x)}
-  var per=0;for(var p=1;p<=16&&!per;p++){var xx=x,y=x;for(i=0;i<p;i++)y=f(y,r);if(Math.abs(xx-y)<1e-4)per=p}
-  var d=per?(per==1?'stable fixed point':'periodic orbit, period '+per):'chaotic (no short period)';
-  $('traj').innerHTML='Nonlinear map ON. Long-time state: <b>'+d+'</b><br>last values: <span class="mono">'+s.map(function(v){return v.toFixed(3)}).join(', ')+'</span>'}
- else{x=0.3;var l=[];for(i=0;i<8;i++){l.push(x);x=x*r}
-  $('traj').innerHTML='Nonlinear term OFF (Γ = 0): u<sub>n+1</sub> = βu<sub>n</sub>. Only growth: <span class="mono">'+l.map(function(v){return v.toFixed(2)}).join(', ')+'</span><br>A linear system can only decay, grow or oscillate. It cannot make chaos.'}
- g.fillStyle='#97a3c4';g.font='13px sans-serif';g.fillText('bifurcation diagram: β = 2.4 → 4.0',10,16)}
-$('beta').oninput=draw5;$('nl').onclick=function(){nl=!nl;this.textContent='Nonlinear term: '+(nl?'ON':'OFF');draw5()};
+ /* shared vertical scale for the two curves, so nothing leaves the figure */
+ var m=0.01,i,x;
+ for(i=0;i<=200;i++){x=i/200*4*Math.PI;m=Math.max(m,Math.abs(F(x)),F(x)*F(x))}
+ var zero=135,sc=85/m;
 
-/* 6 quiz */
-var Q=[['Why use Z± = U ± b?','It shows that nonlinearity needs counter-propagating fluctuations',['It makes the equations linear','It removes the magnetic field','It shows that nonlinearity needs counter-propagating fluctuations'],'Z⁺ is advected only by Z⁻, so the interaction structure becomes explicit.'],
-['If U = b, which is true?','Z⁻ = 0 and Z⁺ = 2U',['Z⁺ = Z⁻ = 0','Z⁻ = 0 and Z⁺ = 2U','Z⁺ = 0 and Z⁻ = 2U'],'One Elsässer field vanishes, not both. The wave exists with no partner to interact with.'],
-['Are the six PMMHD variables independent?','No, they are strongly coupled amplitudes',['Yes, six independent waves','No, they are strongly coupled amplitudes','Yes, otherwise chaos is impossible'],'Coupling through Γ is the whole point of the model.'],
-['Is PMMHD just MHD at lower resolution?','No, it keeps the minimal nonlinear structure on purpose',['Yes, just fewer grid cells','No, it keeps the minimal nonlinear structure on purpose','Yes, but with a different B'],'It is a Fourier–Galerkin reduction that preserves coupling, not a coarse grid.'],
-['Why does a linear version fail to be chaotic?','Without the nonlinear coupling there is no feedback between modes',['It has too many variables','Without the nonlinear coupling there is no feedback between modes','Dissipation is always zero'],'Chain: nonlinearity → coupling → feedback → complex dynamics.']],sc=0,ans=0;
-Q.forEach(function(q,i){var d=document.createElement('div');d.innerHTML='<p><b>Q'+(i+1)+'. '+q[0]+'</b></p>';
- q[2].forEach(function(o){var b=document.createElement('button');b.className='opt';b.textContent=o;b.onclick=function(){
-  if(d.dataset.done)return;d.dataset.done=1;ans++;var ok=o==q[1];if(ok)sc++;b.classList.add(ok?'ok':'no');
-  [].forEach.call(d.querySelectorAll('.opt'),function(x){if(x.textContent==q[1])x.classList.add('ok')});
-  var e=document.createElement('p');e.className='sub';e.textContent=(ok?'Correct. ':'Not quite. ')+q[3]+(ans==Q.length?'  Final score: '+sc+'/'+Q.length:'');d.appendChild(e)};d.appendChild(b)});$('quiz').appendChild(d)});
+ /* panel titles + legend */
+ g.textBaseline="alphabetic";g.font="bold 16px system-ui,sans-serif";
+ g.fillStyle=GREY;g.fillText("Real space",12,26);
+ g.fillStyle=BLUE;g.fillRect(W-250,14,14,14);g.fillText("Z(x)",W-230,27);
+ g.fillStyle=ORG;g.fillRect(W-150,14,14,14);g.fillText("Z²(x)",W-130,27);
+
+ /* top panel: curves */
+ g.strokeStyle=LINE;g.lineWidth=1;g.beginPath();g.moveTo(10,zero);g.lineTo(W-10,zero);g.stroke();
+ [[BLUE,function(x){return F(x)}],[ORG,function(x){return F(x)*F(x)}]].forEach(function(f){
+  g.strokeStyle=f[0];g.lineWidth=3;g.beginPath();
+  for(var i=0;i<=W;i+=3){var y=zero-f[1](i/W*4*Math.PI)*sc;i?g.lineTo(i,y):g.moveTo(i,y)}g.stroke()});
+
+ /* separator */
+ g.strokeStyle=LINE;g.beginPath();g.moveTo(10,238);g.lineTo(W-10,238);g.stroke();
+
+ /* bottom panel: spectra, auto-scaled */
+ var Z=[0,A1,A2,0,0],Z2=[(A1*A1+A2*A2)/2,A1*A2,A1*A1/2,A1*A2,A2*A2/2];
+ var mx=0.01;Z.concat(Z2).forEach(function(v){mx=Math.max(mx,v)});
+ var base=H-48,hS=120/mx,gw=W/5,bw=Math.min(38,gw/4);
+ g.fillStyle=GREY;g.font="bold 16px system-ui,sans-serif";g.fillText("Fourier spectrum (mode amplitude)",12,262);
+ g.strokeStyle=GREY;g.lineWidth=1.5;g.beginPath();g.moveTo(10,base);g.lineTo(W-10,base);g.stroke();
+ var lab=["0","k","2k","3k","4k"];
+ for(var k=0;k<5;k++){
+  var cx=gw*(k+.5);
+  [[Z[k],BLUE,cx-bw-2],[Z2[k],ORG,cx+2]].forEach(function(b){
+   var h=b[0]*hS;g.fillStyle=b[1];g.fillRect(b[2],base-h,bw,h);
+   if(b[0]>0.005){g.fillStyle=GREY;g.font="13px system-ui,sans-serif";g.textAlign="center";g.fillText(b[0].toFixed(2),b[2]+bw/2,base-h-6)}});
+  g.fillStyle=ORG==="" ? "" : "#172033";g.font="bold 20px system-ui,sans-serif";g.textAlign="center";g.fillText(lab[k],cx,H-16);
+ }
+ g.textAlign="left";
+}
+window.addEventListener("resize",draw3);
+
+/* 5: map */
+var nl=true;function f(x,r){return r*x*(1-x)}
+function draw5(){var r=+$("beta").value,cv=$("cv5"),g=cv.getContext("2d"),W=cv.width,H=cv.height;$("betav").textContent=r.toFixed(3);g.clearRect(0,0,W,H);
+ if(nl){g.fillStyle="rgba(56,87,214,.55)";for(var px=0;px<W;px++){var q=2.4+px/W*1.6,x=0.5,i;for(i=0;i<250;i++)x=f(x,q);for(i=0;i<60;i++){x=f(x,q);g.fillRect(px,H-x*H*0.95-6,1.4,1.4)}}}
+ var lx=(r-2.4)/1.6*W;g.strokeStyle="#c96b32";g.lineWidth=2;g.beginPath();g.moveTo(lx,0);g.lineTo(lx,H);g.stroke();
+ var x=0.3,s=[],i;
+ if(nl){for(i=0;i<400;i++)x=f(x,r);for(i=0;i<8;i++){x=f(x,r);s.push(x)}
+  var per=0;for(var p=1;p<=16&&!per;p++){var y=x;for(i=0;i<p;i++)y=f(y,r);if(Math.abs(x-y)<1e-4)per=p}
+  $("traj").innerHTML="Nonlinear map ON. Long-time state: <strong>"+(per?(per==1?"stable fixed point":"periodic orbit, period "+per):"chaotic (no short period)")+"</strong><br>last values: <span class='value'>"+s.map(function(v){return v.toFixed(3)}).join(", ")+"</span>"}
+ else{var l=[];for(i=0;i<8;i++){l.push(x);x*=r}
+  $("traj").innerHTML="Nonlinear term OFF (Γ = 0): u<sub>n+1</sub> = βu<sub>n</sub>. Only growth: <span class='value'>"+l.map(function(v){return v.toFixed(2)}).join(", ")+"</span><br>A linear system can only decay, grow or oscillate. It cannot make chaos."}
+ g.fillStyle="#5f6b7a";g.font="13px sans-serif";g.fillText("bifurcation diagram: β = 2.4 → 4.0",10,16)}
+$("beta").oninput=draw5;$("nl").onclick=function(){nl=!nl;this.textContent="Nonlinear term: "+(nl?"ON":"OFF");draw5()};
+
+/* 6: quiz */
+var Q=[["Why use Z± = U ± b?","It shows that nonlinearity needs counter-propagating fluctuations",["It makes the equations linear","It removes the magnetic field","It shows that nonlinearity needs counter-propagating fluctuations"],"Z⁺ is advected only by Z⁻, so the interaction structure becomes explicit."],
+["If U = b, which is true?","Z⁻ = 0 and Z⁺ = 2U",["Z⁺ = Z⁻ = 0","Z⁻ = 0 and Z⁺ = 2U","Z⁺ = 0 and Z⁻ = 2U"],"One Elsässer field vanishes, not both. The wave exists with no partner to interact with."],
+["Are the six PMMHD variables independent?","No, they are strongly coupled amplitudes",["Yes, six independent waves","No, they are strongly coupled amplitudes","Yes, otherwise chaos is impossible"],"Coupling through Γ is the whole point of the model."],
+["Is PMMHD just MHD at lower resolution?","No, it keeps the minimal nonlinear structure on purpose",["Yes, just fewer grid cells","No, it keeps the minimal nonlinear structure on purpose","Yes, but with a different B"],"It is a Fourier–Galerkin reduction that preserves coupling, not a coarse grid."],
+["Why does a linear version fail to be chaotic?","Without the nonlinear coupling there is no feedback between modes",["It has too many variables","Without the nonlinear coupling there is no feedback between modes","Dissipation is always zero"],"Chain: nonlinearity → coupling → feedback → complex dynamics."]],sc=0,ans=0;
+Q.forEach(function(q,i){var d=document.createElement("div"),h=document.createElement("div");h.className="quiz-question";h.textContent=(i+1)+". "+q[0];d.appendChild(h);
+ q[2].forEach(function(o){var b=document.createElement("button");b.className="quiz-answer";b.textContent=o;b.onclick=function(){
+  if(d.dataset.done)return;d.dataset.done=1;ans++;var ok=o==q[1];if(ok)sc++;b.classList.add(ok?"correct":"wrong");
+  [].forEach.call(d.querySelectorAll(".quiz-answer"),function(x){if(x.textContent==q[1])x.classList.add("correct")});
+  var e=document.createElement("div");e.className="quiz-feedback";e.textContent=(ok?"Correct. ":"Not quite. ")+q[3]+(ans==Q.length?"  Final score: "+sc+"/"+Q.length+".":"");d.appendChild(e)};d.appendChild(b)});$("quiz").appendChild(d)});
 
 /* teach back */
-var K=[['Elsässer variables','elsasser|elsässer|z\\+|z\\^\\+'],['counter-propagating waves','counter|opposite'],['Fourier modes','fourier|mode'],['Galerkin truncation','galerkin|truncat'],['six coupled variables','six|6'],['nonlinear coupling / feedback','nonlinear|coupl|feedback'],['discrete map','map|iterat'],['chaos / dynamics','chao|bifurcat|dynamic']];
-$('chk').onclick=function(){var t=$('tb').value.toLowerCase(),h='',n=0;K.forEach(function(k){var ok=new RegExp(k[1]).test(t);n+=ok;h+='<span class="tag '+(ok?'g':'m')+'">'+(ok?'✓ ':'missing: ')+k[0]+'</span>'});
- $('fb').innerHTML='<p><b>'+n+'/'+K.length+' key ideas covered.</b></p>'+h+'<p class="sub">'+(n>=7?'Strong explanation. Now say it aloud in two minutes.':'Add the missing ideas and connect them in a chain: full MHD → Elsässer → Fourier → truncate → 6-D map → chaos.')+'</p>'};
+var K=[["Elsässer variables","elsasser|elsässer|z\\+|z\\^\\+"],["counter-propagating waves","counter|opposite"],["Fourier modes","fourier|mode"],["Galerkin truncation","galerkin|truncat"],["six coupled variables","six|6"],["nonlinear coupling / feedback","nonlinear|coupl|feedback"],["discrete map","map|iterat"],["chaos / dynamics","chao|bifurcat|dynamic"]];
+$("chk").onclick=function(){var t=$("tb").value.toLowerCase(),h="",n=0;K.forEach(function(k){var ok=new RegExp(k[1]).test(t);n+=ok;h+="<span class='tag "+(ok?"g":"m")+"'>"+(ok?"✓ ":"missing: ")+k[0]+"</span>"});
+ $("fb").innerHTML="<p><strong>"+n+"/"+K.length+" key ideas covered.</strong></p>"+h+"<p class='small'>"+(n>=7?"Strong explanation. Now say it aloud in two minutes.":"Add the missing ideas and connect them in a chain: full MHD → Elsässer → Fourier → truncate → 6-D map → chaos.")+"</p>"};
 
 var tries=0;(function w(){if(window.renderMathInElement||tries++>60)show(0);else setTimeout(w,150)})();
-})();
+});
 </script>
+</body>
+</html>
