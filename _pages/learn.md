@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /learn/
-title: learn with me
+title: Learn with me
 description: Interactive lessons for students and curious learners.
 nav: true
 nav_order: 6
