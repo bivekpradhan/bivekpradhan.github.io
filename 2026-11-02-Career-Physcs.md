@@ -5,7 +5,7 @@ date: 2026-11-02 00:00:00
 description: A practical roadmap for physics graduates in India
 tags: physics careers exams
 categories: career-guidance
-related_posts: false
+related_posts: true
 toc:
   sidebar: left
 ---
