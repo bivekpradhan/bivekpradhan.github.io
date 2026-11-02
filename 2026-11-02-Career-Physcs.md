@@ -53,14 +53,14 @@ Research scientists plan experiments, analyse data, publish papers and develop n
 
 ## 3. Government Science Organisations
 
-| Organisation | Roles for physics graduates | How you get in |
-|---|---|---|
-| ISRO | Scientist, Technical Assistant | ISRO central recruitment tests\*; Scientist grade usually needs M.Sc. / B.E. |
-| DRDO | Scientist, Research Fellow | DRDO recruitment notices\*; fellowships via NET / GATE |
-| BARC | Scientific Assistant | BARC recruitment exam and interview\*; GATE-linked routes |
-| CSIR labs, PRL, SINP | Research Associate, Fellow | CSIR-UGC NET (JRF); institute selection |
-| Indian Railways | Technical Officer | Railway recruitment board exams |
-| SSC | Scientific Assistant | SSC exams (CGL and allied) |
+| Organisation         | Roles for physics graduates    | How you get in                                                               |
+| -------------------- | ------------------------------ | ---------------------------------------------------------------------------- |
+| ISRO                 | Scientist, Technical Assistant | ISRO central recruitment tests\*; Scientist grade usually needs M.Sc. / B.E. |
+| DRDO                 | Scientist, Research Fellow     | DRDO recruitment notices\*; fellowships via NET / GATE                       |
+| BARC                 | Scientific Assistant           | BARC recruitment exam and interview\*; GATE-linked routes                    |
+| CSIR labs, PRL, SINP | Research Associate, Fellow     | CSIR-UGC NET (JRF); institute selection                                      |
+| Indian Railways      | Technical Officer              | Railway recruitment board exams                                              |
+| SSC                  | Scientific Assistant           | SSC exams (CGL and allied)                                                   |
 
 **Reality check:** a B.Sc. alone often opens assistant and technical grades. Scientist-grade posts usually expect an M.Sc. or higher.
 
@@ -106,42 +106,42 @@ Medical physicists apply radiation and imaging physics in hospitals and cancer c
 
 ## 7. Government Jobs Through Competitive Exams
 
-| Exam | Leads to | Good to know |
-|---|---|---|
-| UPSC Civil Services | IAS, IPS and other central services | Open to graduates of any stream |
-| UPSC Combined Geo-Scientist | Geoscientist, geophysicist posts | Check the current eligibility notice\* |
-| SSC CGL | Central government Group B and C posts | Scientific Assistant posts also appear via SSC |
-| Banking (IBPS / SBI) | Bank officer and clerical roles | Aptitude and reasoning based |
-| State PSC | State administrative and scientific roles | Syllabus differs by state |
-| Defence technical branches | Technical officer entries | Eligibility varies; B.Sc. alone is not enough for every branch |
+| Exam                        | Leads to                                  | Good to know                                                   |
+| --------------------------- | ----------------------------------------- | -------------------------------------------------------------- |
+| UPSC Civil Services         | IAS, IPS and other central services       | Open to graduates of any stream                                |
+| UPSC Combined Geo-Scientist | Geoscientist, geophysicist posts          | Check the current eligibility notice\*                         |
+| SSC CGL                     | Central government Group B and C posts    | Scientific Assistant posts also appear via SSC                 |
+| Banking (IBPS / SBI)        | Bank officer and clerical roles           | Aptitude and reasoning based                                   |
+| State PSC                   | State administrative and scientific roles | Syllabus differs by state                                      |
+| Defence technical branches  | Technical officer entries                 | Eligibility varies; B.Sc. alone is not enough for every branch |
 
 Start preparing in your final B.Sc. year; most of these exams need only a bachelor's degree.
 
 ## 8. Industry and Specialist Roles
 
-| Role | What it takes | Indicative pay |
-|---|---|---|
-| Consulting Physicist | B.Sc./M.Sc. plus data analytics; R&D, medical and education firms | ₹2.4 to 14 LPA |
-| Quality Control Manager | QC training; manufacturing, pharma, construction | ₹4.3 to 21 LPA |
-| Subject-Matter Expert | Deep subject mastery; writes manuals and exam papers | ₹3 to 30 LPA |
-| Content Developer | Physics writing portfolio; publishers, ed-tech, freelance | ₹1.4 to 10 LPA |
-| Geoscientist | UPSC geo-scientist exam for government; oil, mining and geophysics firms | ₹3.2 to 29 LPA |
-| Accelerator Operator | Electronics and instrumentation skills; labs, energy, healthcare | ₹9 to 75 LPA |
+| Role                    | What it takes                                                            | Indicative pay |
+| ----------------------- | ------------------------------------------------------------------------ | -------------- |
+| Consulting Physicist    | B.Sc./M.Sc. plus data analytics; R&D, medical and education firms        | ₹2.4 to 14 LPA |
+| Quality Control Manager | QC training; manufacturing, pharma, construction                         | ₹4.3 to 21 LPA |
+| Subject-Matter Expert   | Deep subject mastery; writes manuals and exam papers                     | ₹3 to 30 LPA   |
+| Content Developer       | Physics writing portfolio; publishers, ed-tech, freelance                | ₹1.4 to 10 LPA |
+| Geoscientist            | UPSC geo-scientist exam for government; oil, mining and geophysics firms | ₹3.2 to 29 LPA |
+| Accelerator Operator    | Electronics and instrumentation skills; labs, energy, healthcare         | ₹9 to 75 LPA   |
 
 These ranges are averages quoted by Internshala and vary widely by employer and experience.
 
 ## Exam Cheat Sheet
 
-| Exam | What it opens |
-|---|---|
-| IIT-JAM | M.Sc. at IITs and other premier institutes |
-| JEST | Ph.D. and integrated Ph.D. in physics institutes |
-| GATE | M.Tech, Ph.D. and PSU / research recruitment |
-| CSIR-UGC NET | JRF and Assistant Professor eligibility |
-| State SET / CTET / TET\* | College and school teaching posts |
-| UPSC (Civil Services, Geo-Scientist) | Administrative and geoscientist careers |
-| SSC CGL, Banking, State PSC | Central, bank and state government posts |
-| CAT / MAT\* | MBA for analytics, finance and management |
+| Exam                                 | What it opens                                    |
+| ------------------------------------ | ------------------------------------------------ |
+| IIT-JAM                              | M.Sc. at IITs and other premier institutes       |
+| JEST                                 | Ph.D. and integrated Ph.D. in physics institutes |
+| GATE                                 | M.Tech, Ph.D. and PSU / research recruitment     |
+| CSIR-UGC NET                         | JRF and Assistant Professor eligibility          |
+| State SET / CTET / TET\*             | College and school teaching posts                |
+| UPSC (Civil Services, Geo-Scientist) | Administrative and geoscientist careers          |
+| SSC CGL, Banking, State PSC          | Central, bank and state government posts         |
+| CAT / MAT\*                          | MBA for analytics, finance and management        |
 
 ## Build These Alongside Your Degree
 
@@ -158,4 +158,4 @@ A B.Sc. in Physics is a foundation, not a single path. If you want research or a
 
 ---
 
-*Notes and sources.* This post draws on pages from Shiv Nadar University, LPU, K.R. Mangalam University and Internshala, with supporting Careers360 answers. The Indeed and Quora pages in the original list could not be opened. Items marked \* come from general knowledge rather than those sources, so please confirm eligibility, dates and syllabus on official notifications. Salary figures are indicative and cite AmbitionBox-based data from Internshala and Shiv Nadar University.
+_Notes and sources._ This post draws on pages from Shiv Nadar University, LPU, K.R. Mangalam University and Internshala, with supporting Careers360 answers. The Indeed and Quora pages in the original list could not be opened. Items marked \* come from general knowledge rather than those sources, so please confirm eligibility, dates and syllabus on official notifications. Salary figures are indicative and cite AmbitionBox-based data from Internshala and Shiv Nadar University.
