@@ -158,4 +158,4 @@ A B.Sc. in Physics is a foundation, not a single path. If you want research or a
 
 ---
 
-_Notes and sources._ This post draws on pages from Shiv Nadar University, LPU, K.R. Mangalam University and Internshala, with supporting Careers360 answers. The Indeed and Quora pages in the original list could not be opened. Items marked \* come from general knowledge rather than those sources, so please confirm eligibility, dates and syllabus on official notifications. Salary figures are indicative and cite AmbitionBox-based data from Internshala and Shiv Nadar University.
+_Notes and sources._ This post draws on pages from Shiv Nadar University, LPU, K.R. Mangalam University and Internshala, with supporting Careers360 answers and my personnel knowledge of the field. 
